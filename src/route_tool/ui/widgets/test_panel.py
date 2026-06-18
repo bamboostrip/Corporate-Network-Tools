@@ -56,6 +56,9 @@ class _DeviceRow(ctk.CTkFrame):
 class TestPanel(ctk.CTkFrame):
     """连通性测试区域。"""
 
+    # 告诉 pytest：这是 UI 类不是测试类（类名以 Test 开头会被误判）
+    __test__ = False
+
     def __init__(
         self,
         master,
