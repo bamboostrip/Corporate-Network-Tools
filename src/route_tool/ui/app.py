@@ -36,6 +36,7 @@ class MainApp(ctk.CTk):
 
         self._route_panel = RoutePanel(
             self,
+            on_get_network_info=self._backend.get_network_info,
             on_check_route=self._check_route,
             on_add_route=self._backend.add_route,
             on_log=self._log,
@@ -52,8 +53,8 @@ class MainApp(ctk.CTk):
         self._log_panel = LogPanel(self)
         self._log_panel.grid(row=2, column=0, padx=20, pady=(10, 20), sticky="nsew")
 
-        # 启动后自动检测路由状态
-        self.after(100, self._route_panel.check_route_async)
+        # 启动后自动检测网络环境（WiFi/IP/5.22 可达性）+ 路由状态
+        self.after(100, self._route_panel.check_prerequisite_async)
 
     def _check_route(self) -> bool:
         """路由检查的封装（route_exists 需要 RouteInfo 参数，这里固定用 DEFAULT_ROUTE）。"""

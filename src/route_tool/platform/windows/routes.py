@@ -11,6 +11,7 @@ import re
 import subprocess
 
 from route_tool.core.models import Result, ResultLevel, RouteInfo
+from route_tool.platform.windows.subprocess_utils import no_window_kwargs
 
 # Windows route 命令默认输出 GBK 编码
 _ENCODING = "gbk"
@@ -18,7 +19,7 @@ _ERRORS = "replace"
 
 
 def _run(cmd: list[str]) -> subprocess.CompletedProcess:
-    """统一的 subprocess 调用，强制 GBK 解码、无 shell。"""
+    """统一的 subprocess 调用，强制 GBK 解码、无 shell、隐藏控制台窗口。"""
     return subprocess.run(
         cmd,
         capture_output=True,
@@ -26,6 +27,7 @@ def _run(cmd: list[str]) -> subprocess.CompletedProcess:
         encoding=_ENCODING,
         errors=_ERRORS,
         shell=False,
+        **no_window_kwargs(),
     )
 
 

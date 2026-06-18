@@ -14,7 +14,8 @@ from route_tool.ui.widgets.log_panel import LogPanel
 def test_route_panel_has_async_methods():
     """RoutePanel 必须有后台线程入口和主线程回调方法。"""
     assert hasattr(RoutePanel, "check_route_async")
-    assert hasattr(RoutePanel, "_update_status")
+    assert hasattr(RoutePanel, "check_prerequisite_async")
+    assert hasattr(RoutePanel, "_update_route_status")
     assert hasattr(RoutePanel, "_on_config_done")
 
 

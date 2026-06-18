@@ -54,3 +54,16 @@ class PrinterInfo:
     name: str
     ip: str
     icon: str = "🖨"
+
+
+@dataclass
+class NetworkInfo:
+    """当前网络环境信息。
+
+    给 UI 显示用：用户能看到自己连的 WiFi、本机 IP，
+    以及网关 192.168.5.22 是否可达（可达才允许配置路由）。
+    """
+    wifi_name: str            # SSID，未连接/无无线网卡时为 "未连接"
+    local_ip: str             # 本机出口 IP，获取失败时为 "未知"
+    gateway522_reachable: bool  # 192.168.5.22 是否可 ping 通
+    gateway522_message: str   # 给用户看的可达性提示，如 "✓ 可达" / "✗ 超时"

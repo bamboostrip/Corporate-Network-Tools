@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 import pytest
 
 from route_tool.core.contracts import PlatformBackend
-from route_tool.core.models import ResultLevel, RouteInfo
+from route_tool.core.models import NetworkInfo, PingResult, ResultLevel, RouteInfo
 from route_tool.platform.macos.backend import MacBackend
 
 
@@ -77,3 +77,33 @@ def test_ping_failure():
     with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc):
         result = MacBackend().ping("192.168.0.248", count=2)
     assert result.ok is False
+
+
+def test_backend_get_network_info_combines_sources():
+    """get_network_info 组合 WiFi SSID、本机 IP、5.22 ping 结果。"""
+    fake_ping = PingResult(host="192.168.5.22", ok=True, message="可达", latency_ms=3.0)
+    with patch.object(MacBackend, "ping", return_value=fake_ping) as mock_ping, \
+         patch("route_tool.platform.macos.backend._get_wifi_ssid", return_value="OfficeNet") as mock_wifi, \
+         patch("route_tool.platform.macos.backend._get_local_ip", return_value="192.168.5.100") as mock_ip:
+        info = MacBackend().get_network_info()
+    assert info.wifi_name == "OfficeNet"
+    assert info.local_ip == "192.168.5.100"
+    assert info.gateway522_reachable is True
+    assert "可达" in info.gateway522_message
+    # ping 测的是网关 5.22
+    mock_ping.assert_called_once()
+    assert mock_ping.call_args[0][0] == "192.168.5.22"
+    mock_wifi.assert_called_once()
+    mock_ip.assert_called_once()
+
+
+def test_backend_get_network_info_unreachable():
+    """5.22 ping 不通时，gateway522_reachable=False。"""
+    fake_ping = PingResult(host="192.168.5.22", ok=False, message="不可达")
+    with patch.object(MacBackend, "ping", return_value=fake_ping), \
+         patch("route_tool.platform.macos.backend._get_wifi_ssid", return_value="未连接"), \
+         patch("route_tool.platform.macos.backend._get_local_ip", return_value="未知"):
+        info = MacBackend().get_network_info()
+    assert info.gateway522_reachable is False
+    assert info.wifi_name == "未连接"
+    assert info.local_ip == "未知"

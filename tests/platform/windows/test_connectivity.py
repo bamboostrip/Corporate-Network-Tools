@@ -83,3 +83,18 @@ def test_ping_handles_timeout_exception():
         result = ping("192.168.0.210", count=2)
     assert result.ok is False
     assert "超时" in result.message or "timeout" in result.message.lower()
+
+
+def test_ping_hides_console_window():
+    """ping 不能弹黑窗口：subprocess 调用必须注入隐藏控制台的 kwargs。"""
+    import sys
+    if sys.platform != "win32":
+        import pytest
+        pytest.skip("仅验证 Windows 隐藏窗口行为")
+    mock_result = MagicMock()
+    mock_result.stdout = "来自 192.168.0.210 的回复: 字节=32 时间=10ms TTL=64\n"
+    mock_result.returncode = 0
+    with patch("route_tool.platform.windows.connectivity.subprocess.run", return_value=mock_result) as mock_run:
+        ping("192.168.0.210", count=2)
+    kwargs = mock_run.call_args[1]
+    assert "creationflags" in kwargs or "startupinfo" in kwargs

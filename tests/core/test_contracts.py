@@ -13,7 +13,7 @@ def test_unsupported_os_error_message():
 
 def test_protocol_has_required_methods():
     # 验证 Protocol 声明了所有必要方法
-    required = {"is_admin", "route_exists", "add_route", "remove_route", "ping"}
+    required = {"is_admin", "route_exists", "add_route", "remove_route", "ping", "get_network_info"}
     members = {
         name for name, _ in inspect.getmembers(
             PlatformBackend, predicate=lambda x: True

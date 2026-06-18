@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from typing import Protocol, runtime_checkable
 
-from route_tool.core.models import PingResult, Result, RouteInfo
+from route_tool.core.models import NetworkInfo, PingResult, Result, RouteInfo
 
 
 @runtime_checkable
@@ -32,4 +32,11 @@ class PlatformBackend(Protocol):
 
     def ping(self, host: str, count: int = 2) -> PingResult:
         """测试主机连通性。"""
+        ...
+
+    def get_network_info(self) -> NetworkInfo:
+        """查询当前网络环境（WiFi 名、本机 IP、网关 5.22 可达性）。
+
+        UI 据此决定是否允许配置路由：5.22 不可达时禁用配置按钮。
+        """
         ...

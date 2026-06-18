@@ -125,3 +125,18 @@ def test_remove_route_success():
     args = mock_run.call_args[0][0]
     assert "delete" in args
     assert "192.168.0.0" in args
+
+
+# === 隐藏控制台窗口（GUI 程序调 route 不能弹黑窗口）===
+
+def test_routes_run_hides_console_window():
+    """_run 封装必须在 Windows 下注入隐藏控制台的 kwargs。"""
+    import sys
+    if sys.platform != "win32":
+        import pytest
+        pytest.skip("仅验证 Windows 隐藏窗口行为")
+    mock_result = MagicMock(returncode=0, stdout="", stderr="")
+    with patch("route_tool.platform.windows.routes.subprocess.run", return_value=mock_result) as mock_run:
+        route_exists(ROUTE_EXISTS)
+    kwargs = mock_run.call_args[1]
+    assert "creationflags" in kwargs or "startupinfo" in kwargs

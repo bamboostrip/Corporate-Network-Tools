@@ -9,8 +9,10 @@ import os
 import re
 import subprocess
 
-from route_tool.core.config import PING_TIMEOUT_SECONDS
-from route_tool.core.models import PingResult, Result, ResultLevel, RouteInfo
+from route_tool.core.config import GATEWAY, PING_COUNT, PING_TIMEOUT_SECONDS
+from route_tool.core.models import NetworkInfo, PingResult, Result, ResultLevel, RouteInfo
+from route_tool.core.network_util import get_local_ip as _get_local_ip
+from route_tool.platform.macos.network import get_wifi_ssid as _get_wifi_ssid
 
 # 255.255.252.0 -> 22（前缀长度），用二进制 1 的个数
 _MASK_TO_PREFIX = {
@@ -121,4 +123,14 @@ class MacBackend:
         message = f"{host} 可达" if ok else f"{host} 不可达"
         return PingResult(
             host=host, ok=ok, message=message, raw_output=proc.stdout, latency_ms=latency
+        )
+
+    def get_network_info(self) -> NetworkInfo:
+        """查询当前网络环境：WiFi 名、本机 IP、网关 5.22 可达性。"""
+        result = self.ping(GATEWAY, PING_COUNT)
+        return NetworkInfo(
+            wifi_name=_get_wifi_ssid(),
+            local_ip=_get_local_ip(),
+            gateway522_reachable=result.ok,
+            gateway522_message=result.message,
         )

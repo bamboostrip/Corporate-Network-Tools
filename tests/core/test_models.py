@@ -1,5 +1,5 @@
 from route_tool.core.models import (
-    Result, ResultLevel, RouteInfo, PingResult, PrinterInfo
+    Result, ResultLevel, RouteInfo, PingResult, PrinterInfo, NetworkInfo
 )
 
 
@@ -61,3 +61,28 @@ def test_result_ok_property():
     assert Result(level=ResultLevel.SUCCESS, message="x").ok is True
     assert Result(level=ResultLevel.FAILURE, message="x").ok is False
     assert Result(level=ResultLevel.UNSUPPORTED, message="x").ok is False
+
+
+def test_network_info_defaults():
+    """NetworkInfo 携带当前网络环境信息，给 UI 显示用。"""
+    info = NetworkInfo(
+        wifi_name="Corp-WiFi",
+        local_ip="192.168.5.100",
+        gateway522_reachable=True,
+        gateway522_message="可达",
+    )
+    assert info.wifi_name == "Corp-WiFi"
+    assert info.local_ip == "192.168.5.100"
+    assert info.gateway522_reachable is True
+    assert info.gateway522_message == "可达"
+
+
+def test_network_info_unreachable_scenario():
+    """5.22 不可达时的典型取值。"""
+    info = NetworkInfo(
+        wifi_name="未连接",
+        local_ip="未知",
+        gateway522_reachable=False,
+        gateway522_message="ping 超时",
+    )
+    assert info.gateway522_reachable is False

@@ -12,6 +12,7 @@ import subprocess
 
 from route_tool.core.config import PING_TIMEOUT_SECONDS
 from route_tool.core.models import PingResult
+from route_tool.platform.windows.subprocess_utils import no_window_kwargs
 
 
 def parse_ping_result(host: str, output: str) -> PingResult:
@@ -69,6 +70,7 @@ def ping(host: str, count: int = 2) -> PingResult:
             encoding="gbk",
             errors="replace",
             timeout=PING_TIMEOUT_SECONDS,
+            **no_window_kwargs(),
         )
         return parse_ping_result(host, proc.stdout)
     except subprocess.TimeoutExpired:
