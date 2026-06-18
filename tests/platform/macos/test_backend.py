@@ -1,0 +1,79 @@
+from unittest.mock import patch, MagicMock
+
+import pytest
+
+from route_tool.core.contracts import PlatformBackend
+from route_tool.core.models import ResultLevel, RouteInfo
+from route_tool.platform.macos.backend import MacBackend
+
+
+ROUTE = RouteInfo(network="192.168.0.0", mask="255.255.252.0", gateway="192.168.5.22")
+
+# geteuid 是 Unix 专有 API，Windows 的 os 模块没有该属性
+_HAS_GETEUID = hasattr(__import__("os"), "geteuid")
+
+
+def test_mac_backend_satisfies_protocol():
+    assert isinstance(MacBackend(), PlatformBackend)
+
+
+@pytest.mark.skipif(not _HAS_GETEUID, reason="geteuid 是 Unix 专有，Windows 上无此属性")
+def test_is_admin_true_when_euid_zero():
+    with patch("route_tool.platform.macos.backend.os.geteuid", return_value=0):
+        assert MacBackend().is_admin() is True
+
+
+@pytest.mark.skipif(not _HAS_GETEUID, reason="geteuid 是 Unix 专有，Windows 上无此属性")
+def test_is_admin_false_when_euid_nonzero():
+    with patch("route_tool.platform.macos.backend.os.geteuid", return_value=501):
+        assert MacBackend().is_admin() is False
+
+
+def test_is_admin_returns_false_when_no_geteuid():
+    """Windows 上没有 geteuid，is_admin 应返回 False（靠 except AttributeError 兜底）。"""
+    if _HAS_GETEUID:
+        pytest.skip("此测试验证 Windows 行为，仅在没有 geteuid 的平台运行")
+    assert MacBackend().is_admin() is False
+
+
+def test_add_route_success():
+    mock_proc = MagicMock(returncode=0, stdout="add net", stderr="")
+    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc) as mock_run:
+        result = MacBackend().add_route(ROUTE)
+    assert result.level == ResultLevel.SUCCESS
+    args = mock_run.call_args[0][0]
+    # macOS: sudo route -n add -net 192.168.0.0/22 192.168.5.22
+    assert "route" in args
+    assert "add" in args
+    assert "-net" in args
+    assert "192.168.0.0/22" in args  # macOS 用 CIDR
+    assert "192.168.5.22" in args
+
+
+def test_route_exists_uses_netstat():
+    mock_proc = MagicMock(returncode=0, stdout="192.168.0.0/22    192.168.5.22    UG", stderr="")
+    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc) as mock_run:
+        assert MacBackend().route_exists(ROUTE) is True
+    args = mock_run.call_args[0][0]
+    assert "netstat" in args
+    assert "-rn" in args
+
+
+def test_route_exists_absent():
+    mock_proc = MagicMock(returncode=0, stdout="default    192.168.5.1", stderr="")
+    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc):
+        assert MacBackend().route_exists(ROUTE) is False
+
+
+def test_ping_success():
+    mock_proc = MagicMock(returncode=0, stdout="64 bytes from 192.168.0.210: icmp_seq=0 ttl=64 time=10.5 ms", stderr="")
+    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc):
+        result = MacBackend().ping("192.168.0.210", count=2)
+    assert result.ok is True
+
+
+def test_ping_failure():
+    mock_proc = MagicMock(returncode=2, stdout="Request timeout", stderr="")
+    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc):
+        result = MacBackend().ping("192.168.0.248", count=2)
+    assert result.ok is False
