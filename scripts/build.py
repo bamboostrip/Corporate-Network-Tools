@@ -89,8 +89,12 @@ def main() -> int:
     write_version_file(version)
 
     # 3. 构建 PyInstaller 命令
+    # 注意：不能用 "uv run pyinstaller"，uv 在 Windows 下传脚本路径会触发
+    # PyInstaller 的 "Failed to canonicalize script path" 报错。
+    # 改用当前 venv 的 python 直接调用 -m PyInstaller（sys.executable 即 venv python，
+    # 因为本脚本由 uv run python 启动）。
     cmd = [
-        "uv", "run", "pyinstaller",
+        sys.executable, "-m", "PyInstaller",
         "--onefile",
         "--windowed",
         "--uac-admin",
