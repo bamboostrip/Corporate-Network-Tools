@@ -45,21 +45,21 @@ class RoutePanel(ctk.CTkFrame):
 
         # 标题
         self._title = ctk.CTkLabel(self, text="📡 网络路由配置", font=ctk.CTkFont(size=16, weight="bold"))
-        self._title.pack(anchor="w", padx=20, pady=(15, 5))
+        self._title.pack(anchor="w", padx=15, pady=(10, 4))
 
         # === 当前网络信息区 ===
         net_frame = ctk.CTkFrame(self, fg_color="transparent")
-        net_frame.pack(fill="x", padx=20, pady=5)
+        net_frame.pack(fill="x", padx=15, pady=(0, 2))
 
         self._wifi_label = ctk.CTkLabel(net_frame, text="WiFi:    检测中...", anchor="w")
-        self._wifi_label.pack(anchor="w", pady=1)
+        self._wifi_label.pack(anchor="w", pady=0)
 
         self._ip_label = ctk.CTkLabel(net_frame, text="本机IP:  检测中...", anchor="w")
-        self._ip_label.pack(anchor="w", pady=1)
+        self._ip_label.pack(anchor="w", pady=0)
 
         # 5.22 状态行 + 重新检测按钮（同一行）
         gw_row = ctk.CTkFrame(net_frame, fg_color="transparent")
-        gw_row.pack(fill="x", pady=1)
+        gw_row.pack(fill="x", pady=0)
         gw_row.grid_columnconfigure(0, weight=1)
 
         self._gw_label = ctk.CTkLabel(
@@ -68,22 +68,22 @@ class RoutePanel(ctk.CTkFrame):
         self._gw_label.grid(row=0, column=0, sticky="w")
 
         self._recheck_btn = ctk.CTkButton(
-            gw_row, text="重新检测", width=80, command=self.recheck_prerequisite
+            gw_row, text="重新检测", width=80, height=24, command=self.recheck_prerequisite
         )
         self._recheck_btn.grid(row=0, column=1, padx=(10, 0))
 
         # === 目标路由信息区 ===
         info_frame = ctk.CTkFrame(self, fg_color="transparent")
-        info_frame.pack(fill="x", padx=20, pady=(10, 5))
+        info_frame.pack(fill="x", padx=15, pady=(6, 2))
 
         self._net_label = ctk.CTkLabel(info_frame, text=f"目标网段:  {TARGET_CIDR}", anchor="w")
-        self._net_label.pack(anchor="w", pady=2)
+        self._net_label.pack(anchor="w", pady=0)
 
         self._gw2_label = ctk.CTkLabel(info_frame, text=f"网关:      {GATEWAY}", anchor="w")
-        self._gw2_label.pack(anchor="w", pady=2)
+        self._gw2_label.pack(anchor="w", pady=0)
 
         self._status_label = ctk.CTkLabel(info_frame, text="状态:      🔄 检测中...", anchor="w")
-        self._status_label.pack(anchor="w", pady=2)
+        self._status_label.pack(anchor="w", pady=0)
 
         # === 配置按钮 ===
         self._config_btn = ctk.CTkButton(
@@ -91,10 +91,10 @@ class RoutePanel(ctk.CTkFrame):
             text="一键配置路由",
             command=self._on_config_click,
             font=ctk.CTkFont(size=14, weight="bold"),
-            height=40,
+            height=36,
             state="disabled",  # 初始禁用，预检 + 路由检测完成后决定
         )
-        self._config_btn.pack(pady=15)
+        self._config_btn.pack(pady=(8, 10))
 
     # === 业务规则（纯逻辑，便于测试）===
 

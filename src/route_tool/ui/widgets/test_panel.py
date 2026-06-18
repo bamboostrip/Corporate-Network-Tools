@@ -31,17 +31,17 @@ class _DeviceRow(ctk.CTkFrame):
         self.grid_columnconfigure(2, weight=1)  # 状态列拉伸
 
         self._icon = ctk.CTkLabel(self, text=f"{device.icon} {device.name}", width=120, anchor="w")
-        self._icon.grid(row=0, column=0, padx=(0, 10), pady=5, sticky="w")
+        self._icon.grid(row=0, column=0, padx=(0, 10), pady=2, sticky="w")
 
         self._ip_label = ctk.CTkLabel(self, text=device.ip, width=120, anchor="w",
                                        font=ctk.CTkFont(family="Consolas", size=12))
-        self._ip_label.grid(row=0, column=1, padx=(0, 10), pady=5, sticky="w")
+        self._ip_label.grid(row=0, column=1, padx=(0, 10), pady=2, sticky="w")
 
         self._status = ctk.CTkLabel(self, text="未测试", anchor="w")
-        self._status.grid(row=0, column=2, padx=(0, 10), pady=5, sticky="ew")
+        self._status.grid(row=0, column=2, padx=(0, 10), pady=2, sticky="ew")
 
-        self._btn = ctk.CTkButton(self, text="测试", width=60, command=on_test)
-        self._btn.grid(row=0, column=3, padx=0, pady=5)
+        self._btn = ctk.CTkButton(self, text="测试", width=60, height=24, command=on_test)
+        self._btn.grid(row=0, column=3, padx=0, pady=2)
 
     def set_testing(self) -> None:
         self._status.configure(text="🔄 测试中...")
@@ -73,10 +73,10 @@ class TestPanel(ctk.CTkFrame):
         self._rows: dict[str, _DeviceRow] = {}
 
         self._title = ctk.CTkLabel(self, text="🔍 连通性测试", font=ctk.CTkFont(size=16, weight="bold"))
-        self._title.pack(anchor="w", padx=20, pady=(15, 5))
+        self._title.pack(anchor="w", padx=15, pady=(10, 4))
 
         rows_frame = ctk.CTkFrame(self, fg_color="transparent")
-        rows_frame.pack(fill="x", padx=20, pady=5)
+        rows_frame.pack(fill="x", padx=15, pady=(0, 2))
 
         for device in TEST_TARGETS:
             row = _DeviceRow(
@@ -84,15 +84,15 @@ class TestPanel(ctk.CTkFrame):
                 device=device,
                 on_test=lambda ip=device.ip: self._test_single(ip),
             )
-            row.pack(fill="x", pady=2)
+            row.pack(fill="x", pady=1)
             self._rows[device.ip] = row
 
         # 批量测试按钮
         btn_frame = ctk.CTkFrame(self, fg_color="transparent")
-        btn_frame.pack(fill="x", padx=20, pady=(5, 15))
+        btn_frame.pack(fill="x", padx=15, pady=(4, 10))
 
         self._test_all_btn = ctk.CTkButton(
-            btn_frame, text="全部测试", command=self._test_all, height=32
+            btn_frame, text="全部测试", command=self._test_all, height=28
         )
         self._test_all_btn.pack(side="left", padx=(0, 10))
 

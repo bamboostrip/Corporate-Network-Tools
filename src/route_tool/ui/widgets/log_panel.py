@@ -28,7 +28,7 @@ class LogPanel(ctk.CTkFrame):
         super().__init__(master, **kwargs)
 
         self._title = ctk.CTkLabel(self, text="📋 操作日志", font=ctk.CTkFont(size=16, weight="bold"))
-        self._title.pack(anchor="w", padx=20, pady=(15, 5))
+        self._title.pack(anchor="w", padx=15, pady=(10, 4))
 
         self._textbox = ctk.CTkTextbox(
             self,
@@ -36,7 +36,7 @@ class LogPanel(ctk.CTkFrame):
             font=ctk.CTkFont(family="Consolas", size=12),
             state="disabled",
         )
-        self._textbox.pack(fill="both", expand=True, padx=20, pady=(0, 15))
+        self._textbox.pack(fill="both", expand=True, padx=15, pady=(0, 10))
 
     def append(self, message: str, level: str = "info") -> None:
         """追加一条日志。level: info/success/warning/error/debug。"""

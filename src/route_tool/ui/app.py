@@ -23,16 +23,19 @@ class MainApp(ctk.CTk):
         self._backend = backend
 
         self.title("公司网络配置工具")
-        self.geometry("600x700")
-        self.minsize(500, 600)
+        self.geometry("620x820")
+        self.minsize(560, 700)
 
         # 主题：跟随系统
         ctk.set_appearance_mode("system")
         ctk.set_default_color_theme("blue")
 
-        # 布局
+        # 布局：三个区域用 grid，日志区占主要可拉伸空间（weight=3），
+        # 上面的路由/测试区按内容高度自适应（weight=0，不抢空间）。
         self.grid_columnconfigure(0, weight=1)
-        self.grid_rowconfigure(2, weight=1)  # 日志区可拉伸
+        self.grid_rowconfigure(0, weight=0)  # 路由面板：按内容高度
+        self.grid_rowconfigure(1, weight=0)  # 测试面板：按内容高度
+        self.grid_rowconfigure(2, weight=3)  # 日志面板：占据剩余空间
 
         self._route_panel = RoutePanel(
             self,
@@ -41,17 +44,17 @@ class MainApp(ctk.CTk):
             on_add_route=self._backend.add_route,
             on_log=self._log,
         )
-        self._route_panel.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="ew")
+        self._route_panel.grid(row=0, column=0, padx=15, pady=(12, 4), sticky="ew")
 
         self._test_panel = TestPanel(
             self,
             on_ping=self._backend.ping,
             on_log=self._log,
         )
-        self._test_panel.grid(row=1, column=0, padx=20, pady=10, sticky="ew")
+        self._test_panel.grid(row=1, column=0, padx=15, pady=4, sticky="ew")
 
         self._log_panel = LogPanel(self)
-        self._log_panel.grid(row=2, column=0, padx=20, pady=(10, 20), sticky="nsew")
+        self._log_panel.grid(row=2, column=0, padx=15, pady=(4, 12), sticky="nsew")
 
         # 启动后自动检测网络环境（WiFi/IP/5.22 可达性）+ 路由状态
         self.after(100, self._route_panel.check_prerequisite_async)
