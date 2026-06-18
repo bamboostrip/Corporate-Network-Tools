@@ -10,7 +10,9 @@ from route_tool.core.config import DEFAULT_ROUTE
 from route_tool.core.contracts import PlatformBackend
 from route_tool.core.errors import UnsupportedOSError
 from route_tool.platform import get_backend
+from route_tool.ui.widgets.log_panel import LogPanel
 from route_tool.ui.widgets.route_panel import RoutePanel
+from route_tool.ui.widgets.test_panel import TestPanel
 
 
 class MainApp(ctk.CTk):
@@ -40,9 +42,15 @@ class MainApp(ctk.CTk):
         )
         self._route_panel.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="ew")
 
-        # TestPanel 和 LogPanel 在 Task 12 添加，先用占位
-        self._test_panel = None
-        self._log_panel = None
+        self._test_panel = TestPanel(
+            self,
+            on_ping=self._backend.ping,
+            on_log=self._log,
+        )
+        self._test_panel.grid(row=1, column=0, padx=20, pady=10, sticky="ew")
+
+        self._log_panel = LogPanel(self)
+        self._log_panel.grid(row=2, column=0, padx=20, pady=(10, 20), sticky="nsew")
 
         # 启动后自动检测路由状态
         self.after(100, self._route_panel.check_route_async)
@@ -52,11 +60,9 @@ class MainApp(ctk.CTk):
         return self._backend.route_exists(DEFAULT_ROUTE)
 
     def _log(self, message: str, level: str = "info") -> None:
-        """日志回调。Task 12 实现 LogPanel 后会转发给它。"""
-        # 占位：Task 12 会替换为 self._log_panel.append(message, level)
-        import datetime
-        ts = datetime.datetime.now().strftime("%H:%M:%S")
-        print(f"[{ts}] [{level}] {message}")
+        """日志回调，转发给 LogPanel。"""
+        if self._log_panel is not None:
+            self._log_panel.append(message, level)
 
 
 def run_app() -> None:
