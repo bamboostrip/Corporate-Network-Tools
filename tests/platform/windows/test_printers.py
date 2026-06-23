@@ -132,70 +132,35 @@ def test_add_printer_driver_missing():
     assert "驱动" in result.message
 
 
-# === install_driver：pnputil + inf 静默安装 ===
+# === install_driver：pnputil + inf 总是覆盖安装 ===
 
-def test_install_driver_already_installed():
-    """系统已装该驱动时，直接返回驱动名，不调用 pnputil。"""
-    with patch("route_tool.platform.windows.printers.run_powershell",
-               return_value=MagicMock(returncode=0, stdout="SHARP MX-M905 PCL6\n", stderr="")):
-        result = install_driver(BIG)
-    assert result == "SHARP MX-M905 PCL6"
-
-
-def test_install_driver_not_installed_uses_pnputil():
-    """驱动未装时，定位 inf 并用 pnputil 静默安装，注册后重启 Spooler 刷新缓存。
-
-    注意：pnputil 成功时 returncode 也可能是 1（退出码不可靠），
-    必须看 stdout 是否含"成功"关键字。
-    Add-PrinterDriver 不带 -InfPath（-InfPath 参数在某些情况下报 0x80070057，
-    驱动已被 pnputil 装进 DriverStore 后，按名字注册即可）。
-    驱动注册后必须重启 Print Spooler，强制刷新驱动缓存，
-    否则 Add-Printer 可能因缓存未刷新报 0x80070006（ERROR_INVALID_HANDLE）。
-    """
-    # Get-PrinterDriver 检查（returncode=1 未装）→ pnputil（含成功）→ Add-PrinterDriver（成功）
-    # → Spooler 停 → Spooler 启
-    check_empty = MagicMock(returncode=1, stdout="", stderr="")
-    pnputil_ok = MagicMock(returncode=1, stdout="已成功添加驱动程序包", stderr="")
+def test_install_driver_success():
+    """正常覆盖安装驱动：定位 inf 并使用 pnputil 安装，然后 Add-PrinterDriver 注册。"""
+    pnputil_ok = MagicMock(returncode=0, stdout="已成功添加驱动程序包", stderr="")
     register_ok = MagicMock(returncode=0, stdout="", stderr="")
-    spooler_stop = MagicMock(returncode=0, stdout="", stderr="")
-    spooler_start = MagicMock(returncode=0, stdout="", stderr="")
     with patch("route_tool.platform.windows.printers.run_powershell",
-               side_effect=[check_empty, pnputil_ok, register_ok,
-                            spooler_stop, spooler_start]) as mock_ps, \
+               side_effect=[pnputil_ok, register_ok]) as mock_ps, \
          patch("route_tool.platform.windows.printers.find_driver_inf",
-               return_value=r"C:\drivers\su0emenu.inf"):
+               return_value=r"C:\drivers\su0emenu.inf"), \
+         patch("time.sleep") as mock_sleep:
         result = install_driver(BIG)
+    
     assert result == "SHARP MX-M905 PCL6"
-    # 至少有一条命令含 pnputil
-    pnputil_calls = [str(c) for c in mock_ps.call_args_list if "pnputil" in str(c)]
-    assert len(pnputil_calls) >= 1, "应该调用 pnputil 安装 inf"
-    # Add-PrinterDriver 命令不应含 InfPath（避免 0x80070057 参数错误）
-    register_calls = [str(c) for c in mock_ps.call_args_list if "Add-PrinterDriver" in str(c)]
-    assert any("InfPath" not in c for c in register_calls), "Add-PrinterDriver 不应带 InfPath"
-    # 必须重启 Spooler（Stop-Service + Start-Service）
-    all_calls = [str(c) for c in mock_ps.call_args_list]
-    assert any("Spooler" in c and "Stop" in c for c in all_calls), "应该停止 Spooler"
-    assert any("Spooler" in c and "Start" in c for c in all_calls), "应该启动 Spooler"
-
-
-def test_install_driver_already_installed_skips_spooler_restart():
-    """驱动已装时不重启 Spooler（避免每次添加打印机都重启服务）。"""
-    with patch("route_tool.platform.windows.printers.run_powershell",
-               return_value=MagicMock(returncode=0, stdout="SHARP MX-M905 PCL6\n", stderr="")) as mock_ps:
-        result = install_driver(BIG)
-    assert result == "SHARP MX-M905 PCL6"
-    # 不应有 Spooler 重启命令
-    all_calls = [str(c) for c in mock_ps.call_args_list]
-    assert not any("Spooler" in c for c in all_calls), "驱动已装时不应重启 Spooler"
+    mock_sleep.assert_called_once_with(2)
+    
+    # 验证调用的命令
+    calls = [str(c) for c in mock_ps.call_args_list]
+    assert len(calls) == 2
+    assert "pnputil" in calls[0]
+    assert "Add-PrinterDriver" in calls[1]
+    assert "InfPath" not in calls[1]
 
 
 def test_install_driver_pnputil_failure_returns_none():
-    """pnputil 失败时返回 None。"""
-    # Get-PrinterDriver 检查：returncode=1（未装）
-    check_empty = MagicMock(returncode=1, stdout="", stderr="")
-    fail = MagicMock(returncode=1, stdout="", stderr="拒绝访问")
+    """pnputil 失败（输出中没有成功关键字）时返回 None。"""
+    fail = MagicMock(returncode=1, stdout="拒绝访问", stderr="")
     with patch("route_tool.platform.windows.printers.run_powershell",
-               side_effect=[check_empty, fail]), \
+               return_value=fail), \
          patch("route_tool.platform.windows.printers.find_driver_inf",
                return_value=r"C:\drivers\su0emenu.inf"):
         result = install_driver(BIG)
@@ -204,13 +169,10 @@ def test_install_driver_pnputil_failure_returns_none():
 
 def test_install_driver_inf_not_found_returns_none():
     """inf 文件找不到时返回 None（驱动资源缺失）。"""
-    # Get-PrinterDriver 检查：returncode=1（未装）
-    check_empty = MagicMock(returncode=1, stdout="", stderr="")
-    with patch("route_tool.platform.windows.printers.run_powershell",
-               return_value=check_empty), \
-         patch("route_tool.platform.windows.printers.find_driver_inf", return_value=None):
+    with patch("route_tool.platform.windows.printers.find_driver_inf", return_value=None):
         result = install_driver(BIG)
     assert result is None
+
 
 
 # === find_driver_inf：资源定位 ===
