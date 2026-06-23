@@ -144,19 +144,29 @@ def test_install_driver_already_installed():
 
 
 def test_install_driver_not_installed_uses_pnputil():
-    """驱动未装时，定位 inf 并用 pnputil 静默安装。"""
-    # 第一次 Get-PrinterDriver（检查）返回空；pnputil 和 Add-PrinterDriver 返回成功
+    """驱动未装时，定位 inf 并用 pnputil 静默安装。
+
+    注意：pnputil 成功时 returncode 也可能是 1（退出码不可靠），
+    必须看 stdout 是否含"成功"关键字。
+    Add-PrinterDriver 不带 -InfPath（-InfPath 参数在某些情况下报 0x80070057，
+    驱动已被 pnputil 装进 DriverStore 后，按名字注册即可）。
+    """
+    # Get-PrinterDriver 检查（空）→ pnputil（returncode=1 但 stdout 含成功）→ Add-PrinterDriver（成功）
     check_empty = MagicMock(returncode=0, stdout="", stderr="")
-    success = MagicMock(returncode=0, stdout="导入成功", stderr="")
+    pnputil_ok = MagicMock(returncode=1, stdout="已成功添加驱动程序包", stderr="")
+    register_ok = MagicMock(returncode=0, stdout="", stderr="")
     with patch("route_tool.platform.windows.printers.run_powershell",
-               side_effect=[check_empty, success, success]) as mock_ps, \
+               side_effect=[check_empty, pnputil_ok, register_ok]) as mock_ps, \
          patch("route_tool.platform.windows.printers.find_driver_inf",
                return_value=r"C:\drivers\su0emenu.inf"):
         result = install_driver(BIG)
     assert result == "SHARP MX-M905 PCL6"
     # 至少有一条命令含 pnputil
-    pnputil_calls = [c.args[0] for c in mock_ps.call_args_list if "pnputil" in str(c.args)]
+    pnputil_calls = [str(c) for c in mock_ps.call_args_list if "pnputil" in str(c)]
     assert len(pnputil_calls) >= 1, "应该调用 pnputil 安装 inf"
+    # Add-PrinterDriver 命令不应含 InfPath（避免 0x80070057 参数错误）
+    register_calls = [str(c) for c in mock_ps.call_args_list if "Add-PrinterDriver" in str(c)]
+    assert any("InfPath" not in c for c in register_calls), "Add-PrinterDriver 不应带 InfPath"
 
 
 def test_install_driver_pnputil_failure_returns_none():

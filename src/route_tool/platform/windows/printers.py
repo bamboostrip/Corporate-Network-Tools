@@ -101,16 +101,19 @@ def install_driver(target: PrinterTarget) -> str | None:
         return None  # 驱动资源未就位
 
     # 3. pnputil 安装 inf 到驱动库（静默、需管理员）
-    #    pnputil 是命令行工具，不是 PowerShell cmdlet，用 & 调用
+    #    注意：pnputil 的退出码不可靠（成功也可能返回 1），
+    #    必须看 stdout 是否含"成功/successfully"关键字判断。
     pnputil_script = f"& pnputil /add-driver '{inf_path}' /install 2>&1 | Out-String"
     proc = run_powershell(pnputil_script)
-    if proc.returncode != 0:
-        return None
+    success_keywords = ("成功", "successfully", "Published Name", "oem")
+    if not any(kw.lower() in proc.stdout.lower() for kw in success_keywords):
+        return None  # pnputil 真失败
 
     # 4. Add-PrinterDriver 注册驱动到打印子系统
+    #    不带 -InfPath：pnputil 已把驱动装进 DriverStore，按名字注册即可。
+    #    -InfPath 参数在某些 inf 上会报 0x80070057（参数无效）。
     register_script = (
-        f"Add-PrinterDriver -Name '{driver_name}' "
-        f"-InfPath '{inf_path}' -ErrorAction Stop | Out-String"
+        f"Add-PrinterDriver -Name '{driver_name}' -ErrorAction Stop | Out-String"
     )
     proc = run_powershell(register_script)
     if proc.returncode != 0:
