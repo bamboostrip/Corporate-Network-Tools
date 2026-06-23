@@ -101,3 +101,12 @@ def test_backend_add_printer_delegates():
         result = WindowsBackend().add_printer(target)
     assert result is fake
     mock.assert_called_once_with(target)
+
+
+def test_backend_add_scan_share_delegates():
+    from route_tool.core.models import ShareInstallResult
+    fake = ShareInstallResult(share_name="SMY扫描", ok=True, message="ok")
+    with patch("route_tool.platform.windows.backend._add_scan_share", return_value=fake) as mock:
+        result = WindowsBackend().add_scan_share()
+    assert result is fake
+    mock.assert_called_once()

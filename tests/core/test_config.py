@@ -54,3 +54,11 @@ def test_printer_defs():
     assert small.name == "小打印机"
     assert small.ip == "192.168.0.241"  # 修正：原 248 是错的
     assert "MX-C6082D" in small.description
+
+
+def test_scan_share_config():
+    """扫描文件共享配置：路径、账号、密码。"""
+    from route_tool.core.config import SCAN_SHARE_PATH, SCAN_SHARE_USER, SCAN_SHARE_PASSWORD
+    assert SCAN_SHARE_PATH == r"\\192.168.0.210\shared\SMY"
+    assert SCAN_SHARE_USER == "admin"
+    assert SCAN_SHARE_PASSWORD == "admin"

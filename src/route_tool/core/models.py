@@ -88,3 +88,13 @@ class PrinterInstallResult:
     message: str = ""
     raw_output: str = ""
     error_code: int = 0
+
+
+@dataclass
+class ShareInstallResult:
+    """添加扫描共享网络位置的结果。"""
+    share_name: str
+    ok: bool
+    message: str = ""
+    raw_output: str = ""
+    error_code: int = 0

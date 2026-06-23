@@ -14,6 +14,7 @@ from route_tool.core.models import (
     PrinterTarget,
     Result,
     RouteInfo,
+    ShareInstallResult,
 )
 
 
@@ -57,5 +58,13 @@ class PlatformBackend(Protocol):
 
         幂等：已存在时直接返回成功。
         Windows 用 9100+驱动，macOS 用 IPP driverless 尝试。
+        """
+        ...
+
+    def add_scan_share(self) -> ShareInstallResult:
+        """添加扫描文件共享的网络位置（凭据 + 快捷方式）。
+
+        幂等：已存在时覆盖不报错。
+        Windows 用 cmdkey + Network Shortcuts，macOS 暂不支持。
         """
         ...

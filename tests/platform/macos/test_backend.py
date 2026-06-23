@@ -125,3 +125,10 @@ def test_backend_add_printer_delegates():
         result = MacBackend().add_printer(target)
     assert result is fake
     mock.assert_called_once_with(target)
+
+
+def test_backend_add_scan_share_unsupported_on_macos():
+    """macOS 暂不支持扫描共享网络位置，应返回失败提示。"""
+    result = MacBackend().add_scan_share()
+    assert result.ok is False
+    assert "macOS" in result.message or "不支持" in result.message

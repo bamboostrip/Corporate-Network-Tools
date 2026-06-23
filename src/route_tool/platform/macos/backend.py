@@ -10,7 +10,7 @@ import re
 import subprocess
 
 from route_tool.core.config import GATEWAY, PING_COUNT, PING_TIMEOUT_SECONDS
-from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, ResultLevel, RouteInfo
+from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, ResultLevel, RouteInfo, ShareInstallResult
 from route_tool.core.network_util import get_local_ip as _get_local_ip
 from route_tool.platform.macos.network import get_wifi_ssid as _get_wifi_ssid
 from route_tool.platform.macos.printers import (
@@ -144,3 +144,11 @@ class MacBackend:
 
     def add_printer(self, target: PrinterTarget) -> PrinterInstallResult:
         return _add_printer(target)
+
+    def add_scan_share(self) -> ShareInstallResult:
+        """macOS 暂不支持扫描共享网络位置（Windows 专有功能）。"""
+        return ShareInstallResult(
+            share_name="SMY扫描", ok=False,
+            message="macOS 暂不支持扫描共享网络位置，请手动连接 SMB 共享",
+            error_code=-1,
+        )

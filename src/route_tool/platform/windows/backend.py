@@ -1,8 +1,8 @@
 """Windows 平台后端：组合 routes/connectivity/admin/network 模块。"""
 from __future__ import annotations
 
-from route_tool.core.config import GATEWAY, PING_COUNT
-from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, RouteInfo
+from route_tool.core.config import GATEWAY, PING_COUNT, SCAN_SHARE_PASSWORD, SCAN_SHARE_PATH, SCAN_SHARE_USER
+from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, RouteInfo, ShareInstallResult
 from route_tool.core.network_util import get_local_ip as _get_local_ip
 from route_tool.platform.windows.admin import is_admin
 from route_tool.platform.windows.connectivity import ping as _ping
@@ -16,6 +16,7 @@ from route_tool.platform.windows.routes import (
     remove_route as _remove_route,
     route_exists as _route_exists,
 )
+from route_tool.platform.windows.shares import add_scan_share as _add_scan_share
 
 
 class WindowsBackend:
@@ -55,3 +56,11 @@ class WindowsBackend:
 
     def add_printer(self, target: PrinterTarget) -> PrinterInstallResult:
         return _add_printer(target)
+
+    def add_scan_share(self) -> ShareInstallResult:
+        return _add_scan_share(
+            share_path=SCAN_SHARE_PATH,
+            user=SCAN_SHARE_USER,
+            password=SCAN_SHARE_PASSWORD,
+            display_name="SMY扫描",
+        )

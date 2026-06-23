@@ -47,3 +47,9 @@ SMALL_PRINTER = PrinterTarget(
     port=9100,
 )
 PRINTER_DEFS: list[PrinterTarget] = [BIG_PRINTER, SMALL_PRINTER]
+
+# === 扫描文件共享配置 ===
+# 用户扫描文档统一存到这里，程序自动添加为网络位置（免每次输密码）。
+SCAN_SHARE_PATH = r"\\192.168.0.210\shared\SMY"
+SCAN_SHARE_USER = "admin"
+SCAN_SHARE_PASSWORD = "admin"
