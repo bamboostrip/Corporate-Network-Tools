@@ -98,3 +98,13 @@ class ShareInstallResult:
     message: str = ""
     raw_output: str = ""
     error_code: int = 0
+
+
+@dataclass
+class DeployResult:
+    """一键傻瓜部署的整体结果。"""
+    total_steps: int          # 总步骤数
+    completed_steps: int      # 已成功完成的步骤数
+    ok: bool                  # 是否全部成功
+    message: str              # 给用户看的总结消息
+    failed_step: str = ""     # 失败的步骤名（全部成功时为空）

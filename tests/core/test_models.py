@@ -119,3 +119,33 @@ def test_printer_install_result_already_exists():
     )
     assert r.ok is True
     assert r.already_exists is True
+
+
+def test_deploy_result_defaults():
+    """DeployResult 携带一键部署的整体结果。"""
+    from route_tool.core.models import DeployResult
+    r = DeployResult(
+        total_steps=5,
+        completed_steps=5,
+        ok=True,
+        message="一键部署完成",
+    )
+    assert r.total_steps == 5
+    assert r.completed_steps == 5
+    assert r.ok is True
+    assert r.failed_step == ""  # 默认空
+
+
+def test_deploy_result_partial_failure():
+    """部分失败时记录已完成步数和失败步骤名。"""
+    from route_tool.core.models import DeployResult
+    r = DeployResult(
+        total_steps=5,
+        completed_steps=3,
+        ok=False,
+        message="大打印机添加失败",
+        failed_step="添加大打印机",
+    )
+    assert r.completed_steps == 3
+    assert r.ok is False
+    assert r.failed_step == "添加大打印机"
