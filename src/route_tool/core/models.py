@@ -67,3 +67,24 @@ class NetworkInfo:
     local_ip: str             # 本机出口 IP，获取失败时为 "未知"
     gateway522_reachable: bool  # 192.168.5.22 是否可 ping 通
     gateway522_message: str   # 给用户看的可达性提示，如 "✓ 可达" / "✗ 超时"
+
+
+@dataclass
+class PrinterTarget:
+    """待添加的打印机定义（公司固定，非用户输入）。"""
+    name: str            # 系统打印机队列显示名："大打印机"
+    description: str     # 备注："SHARP MX-M905C 彩色复合机"
+    ip: str              # "192.168.0.210"
+    driver_label: str    # 驱动资源定位键："big"/"small"
+    port: int = 9100     # Windows 用 9100(Raw)，macOS 忽略(用 631)
+
+
+@dataclass
+class PrinterInstallResult:
+    """添加打印机的结果。"""
+    printer_name: str
+    ok: bool
+    already_exists: bool = False
+    message: str = ""
+    raw_output: str = ""
+    error_code: int = 0

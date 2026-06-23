@@ -86,3 +86,36 @@ def test_network_info_unreachable_scenario():
         gateway522_message="ping 超时",
     )
     assert info.gateway522_reachable is False
+
+
+def test_printer_target_defaults():
+    from route_tool.core.models import PrinterTarget
+    t = PrinterTarget(
+        name="大打印机",
+        description="SHARP MX-M905C 彩色复合机",
+        ip="192.168.0.210",
+        driver_label="big",
+    )
+    assert t.name == "大打印机"
+    assert t.description == "SHARP MX-M905C 彩色复合机"
+    assert t.ip == "192.168.0.210"
+    assert t.port == 9100  # 默认 9100
+    assert t.driver_label == "big"
+
+
+def test_printer_install_result_success():
+    from route_tool.core.models import PrinterInstallResult
+    r = PrinterInstallResult(printer_name="大打印机", ok=True, message="添加成功")
+    assert r.ok is True
+    assert r.already_exists is False  # 默认 False
+    assert r.raw_output == ""
+    assert r.error_code == 0
+
+
+def test_printer_install_result_already_exists():
+    from route_tool.core.models import PrinterInstallResult
+    r = PrinterInstallResult(
+        printer_name="大打印机", ok=True, already_exists=True, message="已添加过"
+    )
+    assert r.ok is True
+    assert r.already_exists is True
