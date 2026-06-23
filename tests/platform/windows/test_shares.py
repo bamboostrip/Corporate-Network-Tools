@@ -69,29 +69,33 @@ def test_network_shortcuts_dir_under_appdata():
 
 # === create_network_location ===
 
-def test_create_network_location_creates_folder_and_shortcut(tmp_path):
-    """创建网络位置：生成文件夹 + desktop.ini + target.lnk。"""
+def test_create_network_location_creates_lnk_file(tmp_path):
+    """创建网络位置：直接生成 .lnk 快捷方式文件（双击直接打开 UNC）。
+
+    不是文件夹套 target.lnk，而是 Network Shortcuts 目录下直接的 .lnk。
+    这是 Windows "添加网络位置向导"的实际行为。
+    """
     with patch("route_tool.platform.windows.shares.network_shortcuts_dir", return_value=tmp_path):
         ok = create_network_location(
             name="SMY扫描", target=r"\\192.168.0.210\shared\SMY"
         )
     assert ok is True
-    # 文件夹存在
-    loc = tmp_path / "SMY扫描"
-    assert loc.is_dir()
-    # desktop.ini 存在（标识为网络位置）
-    assert (loc / "desktop.ini").is_file()
-    # target.lnk 存在（指向共享路径）
-    assert (loc / "target.lnk").is_file()
+    # 直接是 .lnk 文件（不是文件夹）
+    lnk = tmp_path / "SMY扫描.lnk"
+    assert lnk.is_file()
+    # 不应有 desktop.ini（那是文件夹方式才有的）
+    assert not (tmp_path / "SMY扫描").is_dir()
 
 
 def test_create_network_location_idempotent(tmp_path):
-    """重复创建同名网络位置应成功（幂等）。"""
+    """重复创建同名网络位置应成功（幂等，.lnk 覆盖）。"""
     with patch("route_tool.platform.windows.shares.network_shortcuts_dir", return_value=tmp_path):
         ok1 = create_network_location("SMY扫描", r"\\192.168.0.210\shared\SMY")
         ok2 = create_network_location("SMY扫描", r"\\192.168.0.210\shared\SMY")
     assert ok1 is True
     assert ok2 is True
+    # 只有一个 lnk 文件
+    assert (tmp_path / "SMY扫描.lnk").is_file()
 
 
 # === add_scan_share：完整流程 ===

@@ -59,8 +59,9 @@ def create_network_location(name: str, target: str) -> bool:
     name: 显示名（如 "SMY扫描"）
     target: UNC 路径（如 \\\\192.168.0.210\\shared\\SMY）
 
-    实现：在 Network Shortcuts 目录建一个文件夹，
-    内含 desktop.ini（标识为网络位置）和 target.lnk（指向 UNC）。
+    实现：在 Network Shortcuts 目录直接创建 <name>.lnk 快捷方式文件，
+    TargetPath 指向 UNC。双击直接打开 UNC 路径（和 Windows "添加网络位置向导"
+    行为一致），不是文件夹套 target.lnk。
     """
     shortcuts_dir = network_shortcuts_dir()
     try:
@@ -68,39 +69,16 @@ def create_network_location(name: str, target: str) -> bool:
     except OSError:
         return False
 
-    loc_dir = shortcuts_dir / name
+    lnk_path = shortcuts_dir / f"{name}.lnk"
     try:
-        loc_dir.mkdir(exist_ok=True)  # 幂等：已存在不报错
-    except OSError:
-        return False
-
-    # desktop.ini：标识此文件夹为"网络位置"（显示为快捷方式图标）
-    ini_path = loc_dir / "desktop.ini"
-    try:
-        # 幂等：已存在时先清 hidden 属性才能覆盖，写完再设回
-        import ctypes
-        if ini_path.exists():
-            ctypes.windll.kernel32.SetFileAttributesW(str(ini_path), 0x80)  # FILE_ATTRIBUTE_NORMAL
-        ini_path.write_text(
-            "[.ShellClassInfo]\n"
-            "CLSID={208D2C60-3AEA-1069-A2D7-08002B30309D}\n"  # 网络位置 CLSID
-            "IconResource=C:\\Windows\\System32\\imageres.dll,-25\n",
-            encoding="utf-8",
-        )
-        # 标记为隐藏（Windows 识别网络位置需要）
-        ctypes.windll.kernel32.SetFileAttributesW(str(ini_path), 0x2)  # FILE_ATTRIBUTE_HIDDEN
-    except OSError:
-        return False
-
-    # target.lnk：指向 UNC 路径的快捷方式
-    lnk_path = loc_dir / "target.lnk"
-    try:
-        # 用 WScript.Shell COM 对象创建 .lnk
-        # 这一段必须用 PowerShell 执行（COM 调用）
+        # 用 WScript.Shell COM 对象创建 .lnk 快捷方式
+        # 必须用 PowerShell 执行（COM 调用），路径含中文/反斜杠用单引号包裹
         ps_script = (
             f"$ws = New-Object -ComObject WScript.Shell; "
             f"$lnk = $ws.CreateShortcut('{lnk_path}'); "
             f"$lnk.TargetPath = '{target}'; "
+            f"$lnk.WindowStyle = 1; "
+            f"$lnk.Description = 'SMY scan share'; "
             f"$lnk.Save()"
         )
         cmd = [
