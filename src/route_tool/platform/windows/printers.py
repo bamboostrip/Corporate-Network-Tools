@@ -7,16 +7,47 @@
 from __future__ import annotations
 
 import subprocess
+import sys
+from pathlib import Path
 
 from route_tool.core.models import PrinterInstallResult, PrinterTarget
 from route_tool.platform.windows.subprocess_utils import no_window_kwargs
 
 # 驱动名映射：driver_label → 系统中的驱动名
-# 注意：big 的驱动名需用户实测夏普大.exe /S 装出的驱动名后填入；暂用型号推断值
+# 实测确认（用户手动安装后从 Get-PrinterDriver 取得）：
+#   大打印机：SHARP MX-M905 PCL6（注意是 M905，非 M905C；驱动名与型号不同）
+#   小打印机：SHARP UD3 PCL6（从 sv0emenu.inf 的 Model1 字段确认）
+# PCL6 优先于 PS：日常文档速度更快、兼容性好，PS 留给设计师按需手动安装。
 DRIVER_NAME_MAP: dict[str, str] = {
-    "big": "SHARP MX-M905C PCL6",   # TODO: 待用户实测 Task 0 后确认
-    "small": "SHARP UD3 PCL6",      # 已从 sv0emenu.inf 确认
+    "big": "SHARP MX-M905 PCL6",
+    "small": "SHARP UD3 PCL6",
 }
+
+
+def _drivers_root() -> Path:
+    """返回驱动资源根目录。
+
+    开发环境：src/route_tool/drivers/
+    PyInstaller 打包后：sys._MEIPASS/route_tool/drivers/
+    """
+    if getattr(sys, "frozen", False):
+        # PyInstaller 打包后，资源在 _MEIPASS 下
+        return Path(sys._MEIPASS) / "route_tool" / "drivers"  # type: ignore
+    # 开发环境：本文件在 platform/windows/，往上 3 级到 route_tool/
+    return Path(__file__).resolve().parent.parent.parent / "drivers"
+
+
+def find_driver_inf(driver_label: str) -> Path | None:
+    """在 drivers/<label>/ 下查找 .inf 文件，返回第一个匹配的路径。
+
+    驱动目录可能含多个文件（inf + dll + dat），只取 inf。
+    找不到（资源未就位）返回 None。
+    """
+    driver_dir = _drivers_root() / driver_label
+    if not driver_dir.is_dir():
+        return None
+    inf_files = list(driver_dir.glob("*.inf"))
+    return inf_files[0] if inf_files else None
 
 
 def run_powershell(script: str) -> subprocess.CompletedProcess:
@@ -47,23 +78,44 @@ def printer_exists(target: PrinterTarget) -> bool:
 
 
 def install_driver(target: PrinterTarget) -> str | None:
-    """确保驱动已安装，返回驱动名。已装则直接返回，否则静默安装。
+    """确保驱动已安装，返回驱动名。
 
-    返回 None 表示驱动名映射缺失（实际 inf 安装逻辑待 Task 7 接入 resource_path）。
+    - 已装：直接返回驱动名
+    - 未装：用 pnputil 装内嵌 inf，再 Add-PrinterDriver 注册
+    - 失败（资源缺失/pnputil 报错）：返回 None
     """
     driver_name = DRIVER_NAME_MAP.get(target.driver_label)
     if not driver_name:
         return None
 
-    # 检查驱动是否已装
+    # 1. 检查驱动是否已装
     check = run_powershell(
         f"Get-PrinterDriver -Name '{driver_name}' -ErrorAction SilentlyContinue | Out-String"
     )
     if check.stdout.strip():
         return driver_name  # 已装
 
-    # 未装 → TODO: Task 7 接入 resource_path 后用 pnputil 装 inf
-    # 暂直接返回驱动名，让 Add-Printer 尝试（若系统驱动库没有会失败，错误信息会提示）
+    # 2. 未装 → 定位内嵌 inf
+    inf_path = find_driver_inf(target.driver_label)
+    if inf_path is None:
+        return None  # 驱动资源未就位
+
+    # 3. pnputil 安装 inf 到驱动库（静默、需管理员）
+    #    pnputil 是命令行工具，不是 PowerShell cmdlet，用 & 调用
+    pnputil_script = f"& pnputil /add-driver '{inf_path}' /install 2>&1 | Out-String"
+    proc = run_powershell(pnputil_script)
+    if proc.returncode != 0:
+        return None
+
+    # 4. Add-PrinterDriver 注册驱动到打印子系统
+    register_script = (
+        f"Add-PrinterDriver -Name '{driver_name}' "
+        f"-InfPath '{inf_path}' -ErrorAction Stop | Out-String"
+    )
+    proc = run_powershell(register_script)
+    if proc.returncode != 0:
+        return None
+
     return driver_name
 
 

@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 
 from route_tool.core.models import PrinterTarget, PrinterInstallResult
 from route_tool.platform.windows.printers import (
-    printer_exists, add_printer, run_powershell,
+    printer_exists, add_printer, run_powershell, install_driver,
     DRIVER_NAME_MAP, build_add_command,
 )
 
@@ -110,3 +110,75 @@ def test_add_printer_driver_missing():
         result = add_printer(weird)
     assert result.ok is False
     assert "驱动" in result.message
+
+
+# === install_driver：pnputil + inf 静默安装 ===
+
+def test_install_driver_already_installed():
+    """系统已装该驱动时，直接返回驱动名，不调用 pnputil。"""
+    with patch("route_tool.platform.windows.printers.run_powershell",
+               return_value=MagicMock(returncode=0, stdout="SHARP MX-M905 PCL6\n", stderr="")):
+        result = install_driver(BIG)
+    assert result == "SHARP MX-M905 PCL6"
+
+
+def test_install_driver_not_installed_uses_pnputil():
+    """驱动未装时，定位 inf 并用 pnputil 静默安装。"""
+    # 第一次 Get-PrinterDriver（检查）返回空；pnputil 和 Add-PrinterDriver 返回成功
+    check_empty = MagicMock(returncode=0, stdout="", stderr="")
+    success = MagicMock(returncode=0, stdout="导入成功", stderr="")
+    with patch("route_tool.platform.windows.printers.run_powershell",
+               side_effect=[check_empty, success, success]) as mock_ps, \
+         patch("route_tool.platform.windows.printers.find_driver_inf",
+               return_value=r"C:\drivers\su0emenu.inf"):
+        result = install_driver(BIG)
+    assert result == "SHARP MX-M905 PCL6"
+    # 至少有一条命令含 pnputil
+    pnputil_calls = [c.args[0] for c in mock_ps.call_args_list if "pnputil" in str(c.args)]
+    assert len(pnputil_calls) >= 1, "应该调用 pnputil 安装 inf"
+
+
+def test_install_driver_pnputil_failure_returns_none():
+    """pnputil 失败时返回 None。"""
+    check_empty = MagicMock(returncode=0, stdout="", stderr="")
+    fail = MagicMock(returncode=1, stdout="", stderr="拒绝访问")
+    with patch("route_tool.platform.windows.printers.run_powershell",
+               side_effect=[check_empty, fail]), \
+         patch("route_tool.platform.windows.printers.find_driver_inf",
+               return_value=r"C:\drivers\su0emenu.inf"):
+        result = install_driver(BIG)
+    assert result is None
+
+
+def test_install_driver_inf_not_found_returns_none():
+    """inf 文件找不到时返回 None（驱动资源缺失）。"""
+    check_empty = MagicMock(returncode=0, stdout="", stderr="")
+    with patch("route_tool.platform.windows.printers.run_powershell",
+               return_value=check_empty), \
+         patch("route_tool.platform.windows.printers.find_driver_inf", return_value=None):
+        result = install_driver(BIG)
+    assert result is None
+
+
+# === find_driver_inf：资源定位 ===
+
+def test_find_driver_inf_returns_path_when_exists(tmp_path):
+    """资源目录存在 inf 时返回路径。"""
+    from route_tool.platform.windows import printers
+    # 模拟驱动资源目录
+    big_dir = tmp_path / "big"
+    big_dir.mkdir()
+    inf_file = big_dir / "su0emenu.inf"
+    inf_file.write_text("test")
+    with patch.object(printers, "_drivers_root", return_value=tmp_path):
+        path = printers.find_driver_inf("big")
+    assert path is not None
+    assert path.name == "su0emenu.inf"
+
+
+def test_find_driver_inf_returns_none_when_missing(tmp_path):
+    """资源目录无 inf 时返回 None。"""
+    from route_tool.platform.windows import printers
+    with patch.object(printers, "_drivers_root", return_value=tmp_path):
+        path = printers.find_driver_inf("big")
+    assert path is None
