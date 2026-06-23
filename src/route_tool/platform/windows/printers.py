@@ -127,6 +127,7 @@ def build_add_command(target: PrinterTarget, driver_name: str) -> list[str]:
     port_name = f"IP_{target.ip}"
     return [
         # 1. 创建 TCP/IP 端口（若已存在则跳过）
+        #    用 try/catch 吞"已存在"错误，端口命令的退出码不影响后续
         f"try {{ Add-PrinterPort -Name '{port_name}' "
         f"-PrinterHostAddress '{target.ip}' -ErrorAction Stop }} catch {{ }}",
         # 2. 添加打印机，绑定驱动和端口
@@ -154,17 +155,29 @@ def add_printer(target: PrinterTarget) -> PrinterInstallResult:
         )
 
     # 3. 执行命令序列
+    #    端口命令失败（已存在/被 try-catch 吞）不视为整体失败，
+    #    只有 Add-Printer 命令本身失败才算失败。
     cmds = build_add_command(target, driver_name)
-    for script in cmds:
-        proc = run_powershell(script)
-        if proc.returncode != 0:
-            # 端口创建已被 try/catch 吞掉；到这里说明 Add-Printer 本身失败
-            return PrinterInstallResult(
-                printer_name=target.name, ok=False,
-                message=f"添加打印机失败: {proc.stderr.strip() or proc.stdout.strip()}",
-                raw_output=proc.stderr,
-                error_code=proc.returncode,
-            )
+    # 端口创建命令（第一条）失败可忽略
+    port_proc = run_powershell(cmds[0])
+    # Add-Printer 命令（最后一条）才是关键
+    add_proc = run_powershell(cmds[-1])
+    if add_proc.returncode != 0:
+        return PrinterInstallResult(
+            printer_name=target.name, ok=False,
+            message=f"添加打印机失败: {add_proc.stderr.strip() or add_proc.stdout.strip() or '未知错误'}",
+            raw_output=add_proc.stderr or port_proc.stderr,
+            error_code=add_proc.returncode,
+        )
+
+    # 4. 最终验证（Add-Printer 返回 0 也不一定真成功，再确认一次）
+    if not printer_exists(target):
+        return PrinterInstallResult(
+            printer_name=target.name, ok=False,
+            message="添加打印机失败：命令执行但打印机未出现",
+            raw_output=add_proc.stdout,
+            error_code=-1,
+        )
 
     return PrinterInstallResult(
         printer_name=target.name, ok=True,

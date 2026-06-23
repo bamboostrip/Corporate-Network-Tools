@@ -83,14 +83,35 @@ def test_add_printer_idempotent_when_already_exists():
 
 
 def test_add_printer_success_flow():
-    """正常添加：存在检查→装驱动→建端口→加打印机，全成功。"""
-    with patch("route_tool.platform.windows.printers.printer_exists", return_value=False), \
+    """正常添加：存在检查→装驱动→建端口→加打印机→最终验证，全成功。"""
+    # printer_exists 第一次（开头幂等检查）False，第二次（最终验证）True
+    with patch("route_tool.platform.windows.printers.printer_exists",
+               side_effect=[False, True]), \
          patch("route_tool.platform.windows.printers.install_driver", return_value="SHARP UD3 PCL6") as mock_drv, \
          patch("route_tool.platform.windows.printers.run_powershell",
                return_value=MagicMock(returncode=0, stdout="", stderr="")):
         result = add_printer(SMALL)
     assert result.ok is True
     mock_drv.assert_called_once()
+
+
+def test_add_printer_succeeds_when_port_already_exists():
+    """端口已存在不应视为失败（端口命令 returncode=1 但 try/catch 吞了错误）。
+
+    真实场景：用户重复添加，或端口残留。端口创建命令的 PowerShell 进程退出码
+    可能是 1（即使 try/catch 吞了错误对象），但 Add-Printer 仍能成功。
+    工具应该看 Add-Printer 的结果，而不是端口命令的退出码。
+    """
+    # 端口命令 returncode=1（已存在），Add-Printer returncode=0（成功）
+    port_exists = MagicMock(returncode=1, stdout="", stderr="")
+    add_ok = MagicMock(returncode=0, stdout="", stderr="")
+    with patch("route_tool.platform.windows.printers.printer_exists",
+               side_effect=[False, True]), \
+         patch("route_tool.platform.windows.printers.install_driver", return_value="SHARP UD3 PCL6"), \
+         patch("route_tool.platform.windows.printers.run_powershell",
+               side_effect=[port_exists, add_ok]):
+        result = add_printer(SMALL)
+    assert result.ok is True
 
 
 def test_add_printer_add_command_failure():
