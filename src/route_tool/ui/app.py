@@ -2,7 +2,7 @@
 
 UI 层只依赖 contracts（通过 platform 工厂获取 backend），不直接 import 后端实现。
 布局：所有内容放进 CTkScrollableFrame，解决 150% 缩放下显示不全、不能滚动的问题。
-顶部是"一键傻瓜部署"大按钮，下面是各分模块面板（高级用户和故障排查用）。
+顶部是"一键快捷部署"大按钮，下面是各分模块面板（高级用户和故障排查用）。
 """
 from __future__ import annotations
 

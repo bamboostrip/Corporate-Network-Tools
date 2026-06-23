@@ -45,7 +45,7 @@ class DeployBar(ctk.CTkFrame):
         # 大按钮（最显眼）
         self._btn = ctk.CTkButton(
             self,
-            text="🚀 一键傻瓜部署\n(自动配置路由/打印机/扫描共享)",
+            text="🚀 一键快捷部署\n(自动配置路由/打印机/扫描共享)",
             command=self.deploy_async,
             font=ctk.CTkFont(size=16, weight="bold"),
             height=56,
@@ -66,7 +66,7 @@ class DeployBar(ctk.CTkFrame):
 
         self._btn.configure(state="disabled")
         self._status.configure(text="部署中... 请稍候")
-        self._on_log("=== 开始一键傻瓜部署 ===", "info")
+        self._on_log("=== 开始一键快捷部署 ===", "info")
 
         def worker():
             result = self._on_deploy()
