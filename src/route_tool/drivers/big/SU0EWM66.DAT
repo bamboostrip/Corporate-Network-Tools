@@ -1,0 +1,540 @@
+; ---------------------------------------------------------
+;     UserSettingDefault
+; ---------------------------------------------------------
+[UserSettingDefault]
+
+;tab_stop=4,8,12,127,128
+h_scroll_adjust=110
+
+
+; ---------------------------------------------------------
+;     WaterMark
+; ---------------------------------------------------------
+[WatermarkDefault]
+
+count=6
+offset=10
+
+;0=0,0,0,1,0,255,192,192,142,0,0,100,135,125,0,0,0,0,400,0,0,0,0,3,2,1,34,Arial,None
+;1=0,0,0,1,0,255,192,192,142,0,0,100,142,125,0,0,0,0,400,0,0,0,0,3,2,1,34,Arial,TOP SECRET
+;2=0,0,0,1,0,255,192,192,142,0,0,90,144,125,0,0,0,0,700,0,0,0,0,3,2,1,34,Times New Roman,CONFIDENTIAL
+;3=0,0,0,1,0,255,192,192,142,0,0,200,135,125,0,0,0,0,400,0,0,0,0,3,2,1,34,Courier New,DRAFT
+;4=0,0,0,1,0,255,192,192,142,0,0,110,135,125,0,0,0,0,400,0,0,0,0,3,2,1,34,Arial,ORIGINAL
+;5=0,0,0,1,0,255,192,192,142,0,0,220,135,125,0,0,0,0,400,0,0,0,0,3,2,1,34,Times New Roman,COPY
+
+preset_black=0,0,0
+preset_red=255,0,0
+preset_green=0,255,0
+preset_blue=0,0,255
+preset_cyan=0,255,255
+preset_magenta=255,0,255
+preset_yellow=255,255,0
+preset_custom=127,128,129
+
+outline_w_def=3,300
+decorate_w_def=5,300
+
+preview_size=50
+
+[ImageStampDefault]
+
+count=1
+
+;0=0,0,0,0,90,100,None
+
+; ---------------------------------------------------------
+;     Overlay
+; ---------------------------------------------------------
+[OverlayDefault]
+
+count=1
+
+;0=None
+
+
+; ---------------------------------------------------------
+;     ICCProfileDefault
+; ---------------------------------------------------------
+[ICCProfileDefault]
+
+auto_select=0
+profile_count=1
+profile_name0="sRGB Color Space Profile.icm"
+
+count=7
+;;; JP count=8
+
+
+[ICCProf0]
+
+;title=Text
+title_no=0
+setting_id=0
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=0
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=0
+render_val=0
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=0
+screen_grp=0
+screen_txt=0
+
+prn_mode=1
+
+[ICCProf1]
+
+;title=Presentation
+title_no=1
+setting_id=1
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=0
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=0
+render_val=0
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=0
+screen_grp=0
+screen_txt=0
+
+prn_mode=1
+
+[ICCProf2]
+
+;title=Photo
+title_no=2
+setting_id=2
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=0
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=0
+render_val=0
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=0
+screen_grp=0
+screen_txt=0
+
+prn_mode=1
+
+[ICCProf3]
+
+;title=CAD
+title_no=3
+setting_id=3
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=0
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=0
+render_val=0
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=0
+screen_grp=0
+screen_txt=0
+
+prn_mode=1
+
+[ICCProf4]
+
+;title=Scan
+title_no=4
+setting_id=6
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=1
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=2
+render_val=2
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=2
+screen_grp=2
+screen_txt=2
+
+prn_mode=1
+
+;;; JP [ICCProf5]
+;;; JP 
+;;; JP title=Photo(Glossy)
+;;; JP title_no=7
+;;; JP setting_id=7
+;;; JP icm_method=1
+;;; JP 
+;;; JP src_prof_id=1
+;;; JP input_bmp=
+;;; JP input_grp=
+;;; JP Input_txt=
+;;; JP 
+;;; JP out_prof_id=1
+;;; JP output_bmp=
+;;; JP output_grp=
+;;; JP output_txt=
+;;; JP 
+;;; JP render_id=2
+;;; JP render_val=2
+;;; JP 
+;;; JP cmyk_sim=0
+;;; JP cmyk_sim_prof=0
+;;; JP 
+;;; JP gray_bmp=0
+;;; JP gray_grp=0
+;;; JP gray_txt=0
+;;; JP 
+;;; JP pure_bk_prn=1
+;;; JP bk_over_prn=0
+;;; JP 
+;;; JP screen_bmp=2
+;;; JP screen_grp=2
+;;; JP screen_txt=2
+;;; JP 
+;;; JP prn_mode=1
+;;; JP 
+;;; JP [ICCProf6]
+
+[ICCProf5]
+
+;title=Colorimetric
+title_no=5
+setting_id=8
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=1
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=2
+render_val=2
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=2
+screen_grp=2
+screen_txt=2
+
+prn_mode=1
+
+[ICCProf6]
+
+;title=Custom
+title_no=6
+setting_id=5
+icm_method=1
+
+src_prof_id=1
+input_bmp=
+input_grp=
+Input_txt=
+
+out_prof_id=1
+output_bmp=
+output_grp=
+output_txt=
+
+render_id=2
+render_val=2
+
+cmyk_sim=0
+cmyk_sim_prof=0
+
+gray_bmp=0
+gray_grp=0
+gray_txt=0
+
+pure_bk_prn=1
+bk_over_prn=0
+
+screen_bmp=2
+screen_grp=2
+screen_txt=2
+
+prn_mode=1
+
+
+; ---------------------------------------------------------
+;     DifferentPaperDefault
+; ---------------------------------------------------------
+[DifferentPaperDefault]
+
+;tab_stop=90,180,270
+count=1
+
+
+[DifferentPaper0]
+;title=No Different Paper
+paper_count=0
+
+; ---------------------------------------------------------
+;     Carbon Copy Default
+; ---------------------------------------------------------
+[CarbonCopyDefault]
+
+;tab_stop=90,180,270
+count=1
+
+
+[CarbonCopy0]
+;title=Defaults
+paper_count=0
+
+; ---------------------------------------------------------
+;     TabPrintDefault
+; ---------------------------------------------------------
+[TabPrintDefault]
+
+;tab_stop=45,90,177,269,355
+font_min=6
+font_max=36
+;font_def=11,0,0,0,400,0,0,0,0,3,2,1,34,Arial,
+
+;text_area_adjust=105
+
+count=6
+
+[TabPrint0]
+;Title=No print on Tabs
+PaperSize=9
+PaperSource=261
+;NumberOfIndex=5
+Pos1stIndex=330
+IndexLength=380
+Interval=100
+IndexWidth=12
+Unit=0
+
+US=4
+JP=3
+OT=1
+
+[TabPrint1]
+;Title=A4-5tab-D
+PaperSize=9
+PaperSource=261
+;NumberOfIndex=5
+Pos1stIndex=60
+IndexLength=520
+Interval=60
+IndexWidth=13
+Unit=0
+
+[TabPrint2]
+;Title=A4-5tab-J
+PaperSize=9
+PaperSource=261
+;NumberOfIndex=5
+Pos1stIndex=350
+IndexLength=360
+Interval=120
+IndexWidth=12
+Unit=0
+
+[TabPrint3]
+;Title=A4-5tab-K
+PaperSize=9
+PaperSource=261
+;NumberOfIndex=5
+Pos1stIndex=330
+IndexLength=380
+Interval=100
+IndexWidth=12
+Unit=0
+
+[TabPrint4]
+;Title=LT-5tab-A
+PaperSize=1
+PaperSource=261
+;NumberOfIndex=5
+Pos1stIndex=58
+IndexLength=185
+Interval=15
+IndexWidth=500
+Unit=1
+
+[TabPrint5]
+;Title=LT-8tab-A
+PaperSize=1
+PaperSource=261
+;NumberOfIndex=8
+Pos1stIndex=61
+IndexLength=110
+Interval=14
+IndexWidth=500
+Unit=1
+
+; ---------------------------------------------------------
+;     StoredToDefault
+; ---------------------------------------------------------
+[StoredToDefault]
+
+count=1
+
+;0=0,Main Folder
+
+; ---------------------------------------------------------
+;     TrayStatusDefault
+; ---------------------------------------------------------
+;;; JP [TrayStatusDefault]
+;;; JP
+;;; JP tab_stop=76,153,229
+
+; ---------------------------------------------------------
+;     InsertChapterDefault
+; ---------------------------------------------------------
+[InsertChapterDefault]
+
+;tab_stop=90
+count=1
+
+
+[InsertChapter0]
+;title=No Chapter Inserts
+paper_count=0
+
+; ---------------------------------------------------------
+;     SeparatorDefault
+; ---------------------------------------------------------
+[SeparatorDefault]
+
+;tab_stop=90
+count=1
+
+
+[Separator0]
+;title=No Separator
+paper_count=0
+
+; ---------------------------------------------------------
+;     Wovern Pattern Print Default
+; ---------------------------------------------------------
+[WovenPatternDefault]
+
+;tab_stop=90
+count=1
+
+
+[WovenPattern0]
+;title=Defaults
+set_number=0
+arbitrary_text=0
+date_time=0
+lname_unumber=0
+serial_number=0
+account_job_id=0
+size=48
+angle=0
+effect_pattern=0
+cover_pattern=1
+density=1
+print_color=0
+
+; ---------------------------------------------------------
+;     Debug
+; ---------------------------------------------------------
+;[Debug]
+;dbg_show_tabstops=1
+

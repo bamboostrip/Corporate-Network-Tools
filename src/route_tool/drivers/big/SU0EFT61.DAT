@@ -1,0 +1,2919 @@
+; ---------------------------------------------------------
+;     Default Font
+; ---------------------------------------------------------
+[DefaultFontSetting]
+
+;lfHeight=10
+lfWidth=0
+lfEscapement=0
+lfOrientation=0
+lfWeight=400
+lfItalic=0
+lfUnderline=0
+lfStrikeOut=0
+;lfCharSet=0
+lfOutPrecision=0
+lfClipPrecision=0
+lfQuality=0
+lfPitchAndFamily=49
+;lfFaceName=Courier New
+
+
+; ---------------------------------------------------------
+;     Font List
+; ---------------------------------------------------------
+[FontList9x]
+FontListCount=27
+
+0=Albertus Extra Bold,Albertus Extra Bold
+1=Albertus Medium,Albertus Medium
+2=Antique Olive,Antique Olive
+3=Arial,Arial
+4=CG Times,CG Times
+5=CG Omega,CG Omega
+6=Clarendon Condensed,Clarendon Condensed
+7=Coronet,Coronet
+8=Courier,Courier
+9=Garamond,Garamond
+10=Marigold,Marigold
+11=Times New Roman,Times New Roman
+12=Univers,Univers
+13=Univers Condensed,Univers Condensed
+14=Wingdings,Wingdings
+15=Symbol,Symbol
+16=ITC Avant Garde Gothic,ITC Avant Garde Gothic
+17=ITC Bookman,ITC Bookman
+18=CourierPS,CourierPS
+19=Helvetica,Helvetica
+20=Helvetica Narrow,Helvetica Narrow
+21=New Century Schoolbook,New Century Schoolbook
+22=Palatino,Palatino
+23=SymbolPS,SymbolPS
+24=Times,Times
+25=ITC Zapf Chancery,ITC Zapf Chancery
+26=ITC Zapf Dingbats,ITC Zapf Dingbats
+
+[FontListNT]
+FontListCount=80
+
+0=Albertus Extra Bold,Albertus Extra Bold
+1=Albertus Medium,Albertus Medium
+2=Antique Olive,Antique Olive
+3=Antique Olive Bold,Antique Olive Bold
+4=Antique Olive Italic,Antique Olive Italic
+5=Arial,Arial
+6=Arial Bold,Arial Bold
+7=Arial Italic,Arial Italic
+8=Arial Bold Italic,Arial Bold Italic
+9=CG Times,CG Times
+10=CG Times Bold,CG Times Bold
+11=CG Times Italic,CG Times Italic
+12=CG Times Bold Italic,CG Times Bold Italic
+13=CG Omega,CG Omega
+14=CG Omega Bold,CG Omega Bold
+15=CG Omega Italic,CG Omega Italic
+16=CG Omega Bold Italic,CG Omega Bold Italic
+17=Clarendon Condensed Bold,Clarendon Condensed Bold
+18=Coronet Italic,Coronet Italic
+19=Courier,Courier
+20=Courier Bold,Courier Bold
+21=Courier Italic,Courier Italic
+22=Courier Bold Italic,Courier Bold Italic
+23=Garamond Antiqua,Garamond Antiqua
+24=Garamond Halbfett,Garamond Halbfett
+25=Garamond Kursiv,Garamond Kursiv
+26=Garamond Kursiv Halbfett,Garamond Kursiv Halbfett
+27=Letter Gothic,Letter Gothic
+28=Letter Gothic Bold,Letter Gothic Bold
+29=Letter Gothic Italic,Letter Gothic Italic
+30=Marigold,Marigold
+31=Times New Roman,Times New Roman
+32=Times New Roman Bold,Times New Roman Bold
+33=Times New Roman Italic,Times New Roman Italic
+34=Times New Roman Bold Italic,Times New Roman Bold Italic
+35=Univers Medium,Univers Medium
+36=Univers Bold,Univers Bold
+37=Univers Medium Italic,Univers Medium Italic
+38=Univers Bold Italic,Univers Bold Italic
+39=Univers Condensed Medium,Univers Condensed Medium
+40=Univers Condensed Bold,Univers Condensed Bold
+41=Univers Condensed Medium Italic,Univers Condensed Medium Italic
+42=Univers Condensed Bold Italic,Univers Condensed Bold Italic
+43=Wingdings,Wingdings
+44=Symbol,Symbol
+45=ITC Avant Garde Gothic Book,ITC Avant Garde Gothic Book
+46=ITC Avant Garde Gothic Demi,ITC Avant Garde Gothic Demi
+47=ITC Avant Garde Gothic Book Oblique,ITC Avant Garde Gothic Book Oblique
+48=ITC Avant Garde Gothic Demi Oblique,ITC Avant Garde Gothic Demi Oblique
+49=ITC Bookman Light,ITC Bookman Light
+50=ITC Bookman Light Demi,ITC Bookman Light Demi
+51=ITC Bookman Light Italic,ITC Bookman Light Italic
+52=ITC Bookman Light Demi Italic,ITC Bookman Light Demi Italic
+53=CourierPS,CourierPS
+54=CourierPS Bold,CourierPS Bold
+55=CourierPS Oblique,CourierPS Oblique
+56=CourierPS Bold Oblique,CourierPS Bold Oblique
+57=Helvetica,Helvetica
+58=Helvetica Bold,Helvetica Bold
+59=Helvetica Oblique,Helvetica Oblique
+60=Helvetica Bold Oblique,Helvetica Bold Oblique
+61=Helvetica Narrow,Helvetica Narrow
+62=Helvetica Narrow Bold,Helvetica Narrow Bold
+63=Helvetica Narrow Oblique,Helvetica Narrow Oblique
+64=Helvetica Narrow Bold Oblique,Helvetica Narrow Bold Oblique
+65=New Century Schoolbook,New Century Schoolbook
+66=New Century Schoolbook Bold,New Century Schoolbook Bold
+67=New Century Schoolbook Italic,New Century Schoolbook Italic
+68=New Century Schoolbook Bold Italic,New Century Schoolbook Bold Italic
+69=Palatino Roman,Palatino Roman
+70=Palatino Bold,Palatino Bold
+71=Palatino Italic,Palatino Italic
+72=Palatino Bold Italic,Palatino Bold Italic
+73=SymbolPS,SymbolPS
+74=Times Roman,Times Roman
+75=Times Bold,Times Bold
+76=Times Italic,Times Italic
+77=Times Bold Italic,Times Bold Italic
+78=ITC Zapf Chancery Medium Italic,ITC Zapf Chancery Medium Italic
+79=ITC Zapf Dingbats,ITC Zapf Dingbats
+
+
+[FontName9X]
+FontNameCount=27
+
+0=Albertus Extra Bold,Albertus Extra Bold,Albertus Extra Bold
+1=Albertus Medium,Albertus Medium,Albertus Medium
+2=Antique Olive,Antique Olive,Antique Olive
+3=Arial,Arial,Arial
+4=CG Times,CG Times,CG Times
+5=CG Omega,CG Omega,CG Omega
+6=Clarendon Condensed,Clarendon Condensed,Clarendon Condensed Bold
+7=Coronet,Coronet,Coronet Italic
+8=Courier,Courier,Courier
+9=Garamond,Garamond,Garamond
+10=Marigold,Marigold,Marigold
+11=Times New Roman,Times New Roman,Times New Roman
+12=Univers,Univers,Univers
+13=Univers Condensed,Univers Condensed,Univers Condensed
+14=Wingdings,Wingdings,Wingdings
+15=Symbol,Symbol,Symbol
+16=ITC Avant Garde Gothic,ITC Avant Garde Gothic,ITC Avant Garde Gothic
+17=ITC Bookman,ITC Bookman,ITC Bookman
+18=CourierPS,CourierPS,CourierPS
+19=Helvetica,Helvetica,Helvetica
+20=Helvetica Narrow,Helvetica Narrow,Helvetica Narrow
+21=New Century Schoolbook,New Century Schoolbook,New Century Schoolbook
+22=Palatino,Palatino,Palatino
+23=SymbolPS,SymbolPS,SymbolPS
+24=Times,Times,Times
+25=ITC Zapf Chancery,ITC Zapf Chancery,ITC Zapf Chancery Medium Italic
+26=ITC Zapf Dingbats,ITC Zapf Dingbats,ITC Zapf Dingbats
+
+[FontNameNT]
+FontNameCount=80
+
+0=Albertus Extra Bold,Albertus Extra Bold,Albertus Extra Bold
+1=Albertus Medium,Albertus Medium,Albertus Medium
+2=Antique Olive,Antique Olive,Antique Olive Regular
+3=Antique Olive Bold,Antique Olive Bold,Antique Olive Bold
+4=Antique Olive Italic,Antique Olive Italic,Antique Olive Italic
+5=Arial,Arial,Arial Regular
+6=Arial Bold,Arial Bold,Arial Bold
+7=Arial Italic,Arial Italic,Arial Italic
+8=Arial Bold Italic,Arial Bold Italic,Arial Bold Italic
+9=CG Times,CG Times,CG Times Regular
+10=CG Times Bold,CG Times Bold,CG Times Bold
+11=CG Times Italic,CG Times Italic,CG Times Italic
+12=CG Times Bold Italic,CG Times Bold Italic,CG Times Bold Italic
+13=CG Omega,CG Omega,CG Omega Regular
+14=CG Omega Bold,CG Omega Bold,CG Omega Bold
+15=CG Omega Italic,CG Omega Italic,CG Omega Italic
+16=CG Omega Bold Italic,CG Omega Bold Italic,CG Omega Bold Italic
+17=Clarendon Condensed Bold,Clarendon Condensed Bold,Clarendon Condensed Bold
+18=Coronet Italic,Coronet Italic,Coronet Italic
+19=Courier,Courier,Courier Regular
+20=Courier Bold,Courier Bold,Courier Bold
+21=Courier Italic,Courier Italic,Courier Italic
+22=Courier Bold Italic,Courier Bold Italic,Courier Bold Italic
+23=Garamond Antiqua,Garamond Antiqua,Garamond Antiqua
+24=Garamond Halbfett,Garamond Halbfett,Garamond Halbfett
+25=Garamond Kursiv,Garamond Kursiv,Garamond Kursiv
+26=Garamond Kursiv Halbfett,Garamond Kursiv Halbfett,Garamond Kursiv Halbfett
+27=Letter Gothic,Letter Gothic,Letter Gothic Regular
+28=Letter Gothic Bold,Letter Gothic Bold,Letter Gothic Bold
+29=Letter Gothic Italic,Letter Gothic Italic,Letter Gothic Italic
+30=Marigold,Marigold,Marigold
+31=Times New Roman,Times New Roman,Times New Roman Regular
+32=Times New Roman Bold,Times New Roman Bold,Times New Roman Bold
+33=Times New Roman Italic,Times New Roman Italic,Times New Roman Italic
+34=Times New Roman Bold Italic,Times New Roman Bold Italic,Times New Roman Bold Italic
+35=Univers Medium,Univers Medium,Univers Medium
+36=Univers Bold,Univers Bold,Univers Bold
+37=Univers Medium Italic,Univers Medium Italic,Univers Medium Italic
+38=Univers Bold Italic,Univers Bold Italic,Univers Bold Italic
+39=Univers Condensed Medium,Univers Condensed Medium,Univers Condensed Medium
+40=Univers Condensed Bold,Univers Condensed Bold,Univers Condensed Bold
+41=Univers Condensed Medium Italic,Univers Condensed Medium Italic,Univers Condensed Medium Italic
+42=Univers Condensed Bold Italic,Univers Condensed Bold Italic,Univers Condensed Bold Italic
+43=Wingdings,Wingdings,Wingdings
+44=Symbol,Symbol,Symbol
+45=ITC Avant Garde Gothic Book,ITC Avant Garde Gothic Book,ITC Avant Garde Gothic Book
+46=ITC Avant Garde Gothic Demi,ITC Avant Garde Gothic Demi,ITC Avant Garde Gothic Demi
+47=ITC Avant Garde Gothic Book Oblique,ITC Avant Garde Gothic Book Oblique,ITC Avant Garde Gothic Book Oblique
+48=ITC Avant Garde Gothic Demi Oblique,ITC Avant Garde Gothic Demi Oblique,ITC Avant Garde Gothic Demi Oblique
+49=ITC Bookman Light,ITC Bookman Light,ITC Bookman Light
+50=ITC Bookman Light Demi,ITC Bookman Light Demi,ITC Bookman Light Demi
+51=ITC Bookman Light Italic,ITC Bookman Light Italic,ITC Bookman Light Italic
+52=ITC Bookman Light Demi Italic,ITC Bookman Light Demi Italic,ITC Bookman Light Demi Italic
+53=CourierPS,CourierPS,CourierPS Regular
+54=CourierPS Bold,CourierPS Bold,CourierPS Bold
+55=CourierPS Oblique,CourierPS Oblique,CourierPS Oblique
+56=CourierPS Bold Oblique,CourierPS Bold Oblique,CourierPS Bold Oblique
+57=Helvetica,Helvetica,Helvetica Regular
+58=Helvetica Bold,Helvetica Bold,Helvetica Bold
+59=Helvetica Oblique,Helvetica Oblique,Helvetica Oblique
+60=Helvetica Bold Oblique,Helvetica Bold Oblique,Helvetica Bold Oblique
+61=Helvetica Narrow,Helvetica Narrow,Helvetica Narrow Regular
+62=Helvetica Narrow Bold,Helvetica Narrow Bold,Helvetica Narrow Bold
+63=Helvetica Narrow Oblique,Helvetica Narrow Oblique,Helvetica Narrow Oblique
+64=Helvetica Narrow Bold Oblique,Helvetica Narrow Bold Oblique,Helvetica Narrow Bold Oblique
+65=New Century Schoolbook,New Century Schoolbook,New Century Schoolbook Regular
+66=New Century Schoolbook Bold,New Century Schoolbook Bold,New Century Schoolbook Bold
+67=New Century Schoolbook Italic,New Century Schoolbook Italic,New Century Schoolbook Italic
+68=New Century Schoolbook Bold Italic,New Century Schoolbook Bold Italic,New Century Schoolbook Bold Italic
+69=Palatino Roman,Palatino Roman,Palatino Roman
+70=Palatino Bold,Palatino Bold,Palatino Bold
+71=Palatino Italic,Palatino Italic,Palatino Italic
+72=Palatino Bold Italic,Palatino Bold Italic,Palatino Bold Italic
+73=SymbolPS,SymbolPS,SymbolPS
+74=Times Roman,Times Roman,Times Roman
+75=Times Bold,Times Bold,Times Bold
+76=Times Italic,Times Italic,Times Italic
+77=Times Bold Italic,Times Bold Italic,Times Bold Italic
+78=ITC Zapf Chancery Medium Italic,ITC Zapf Chancery Medium Italic,ITC Zapf Chancery Medium Italic
+79=ITC Zapf Dingbats,ITC Zapf Dingbats,ITC Zapf Dingbats
+
+[Albertus Extra Bold]
+FontDataCount=2
+
+CmdFont0="Albertus      Xb"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Albertus      Xb"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Albertus Medium]
+FontDataCount=2
+
+CmdFont0="Albertus      Md"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Albertus      Md"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Antique Olive]
+FontDataCount=6
+
+CmdFont0="AntiqOlive      "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="AntiqOlive    Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="AntiqOlive    It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="AntiqOlive      "
+FontWeight3=400
+FontItalic3=0
+FontCharset3=238
+FontSymSetID3=293
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="AntiqOlive    Bd"
+FontWeight4=700
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont1=0
+
+CmdFont5="AntiqOlive    It"
+FontWeight5=400
+FontItalic5=1
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+[Arial]
+FontDataCount=8
+
+CmdFont0="Arial           "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Arial         Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Arial         It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Arial       BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Arial           "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Arial         Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Arial         It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Arial       BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[CG Times]
+FontDataCount=8
+
+CmdFont0="CG Times        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Times      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="CG Times      It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="CG Times    BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="CG Times        "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="CG Times      Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="CG Times      It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="CG Times    BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[CG Omega]
+FontDataCount=8
+
+CmdFont0="CG Omega        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Omega      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="CG Omega      It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="CG Omega    BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="CG Omega        "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="CG Omega      Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="CG Omega      It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="CG Omega    BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Clarendon Condensed Bold]
+FontDataCount=2
+
+CmdFont0="Clarendon   CdBd"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Clarendon   CdBd"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Coronet Italic]
+FontDataCount=2
+
+CmdFont0="Coronet         "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Coronet         "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Courier]
+FontDataCount=8
+
+CmdFont0="Courier         "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="Courier       Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=0
+FontOptDLFont1=0
+
+CmdFont2="Courier       It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=0
+FontOptDLFont2=0
+
+CmdFont3="Courier     BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=0
+FontOptDLFont3=0
+
+CmdFont4="Courier         "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=0
+FontOptDLFont4=0
+
+CmdFont5="Courier       Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=0
+FontOptDLFont5=0
+
+CmdFont6="Courier       It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=0
+FontOptDLFont6=0
+
+CmdFont7="Courier     BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=0
+FontOptDLFont7=0
+
+[Garamond]
+FontDataCount=8
+
+CmdFont0="Garamond Antiqua"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Garamond     Hlb"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Garamond    Krsv"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Garamond KrsvHlb"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Garamond Antiqua"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Garamond     Hlb"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Garamond    Krsv"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Garamond KrsvHlb"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Letter Gothic]
+FontDataCount=6
+
+CmdFont0="LetterGothic    "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="LetterGothic  Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=0
+FontOptDLFont1=0
+
+CmdFont2="LetterGothic  It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=0
+FontOptDLFont2=0
+
+CmdFont3="LetterGothic    "
+FontWeight3=400
+FontItalic3=0
+FontCharset3=238
+FontSymSetID3=293
+FontOptPitch3=0
+FontOptDLFont3=0
+
+CmdFont4="LetterGothic  Bd"
+FontWeight4=700
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=0
+FontOptDLFont4=0
+
+CmdFont5="LetterGothic  It"
+FontWeight5=400
+FontItalic5=1
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=0
+FontOptDLFont5=0
+
+[Marigold]
+FontDataCount=2
+
+CmdFont0="Marigold        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Marigold        "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times New Roman]
+FontDataCount=8
+
+CmdFont0="TimesNewRmn     "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="TimesNewRmn   Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="TimesNewRmn   It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="TimesNewRmn BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="TimesNewRmn     "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="TimesNewRmn   Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="TimesNewRmn   It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="TimesNewRmn BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Univers]
+FontDataCount=8
+
+CmdFont0="Univers       Md"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers       Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Univers     MdIt"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Univers     BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Univers       Md"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Univers       Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Univers     MdIt"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Univers     BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Univers Condensed]
+FontDataCount=8
+
+CmdFont0="Univers     CdMd"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers     CdBd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Univers   CdMdIt"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Univers   CdBdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Univers     CdMd"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Univers     CdBd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Univers   CdMdIt"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Univers   CdBdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Wingdings]
+FontDataCount=1
+
+CmdFont0="Wingdings       "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=2
+FontSymSetID0=18540
+FontOptPitch0=1
+FontOptDLFont0=0
+
+[Symbol]
+FontDataCount=1
+
+CmdFont0="Symbol          "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=2
+FontSymSetID0=621
+FontOptPitch0=1
+FontOptDLFont0=0
+
+[ITC Avant Garde Gothic]
+FontDataCount=8
+
+CmdFont0="ITCAvantGard  Bk"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCAvantGard  Db"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="ITCAvantGardBkOb"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="ITCAvantGardDbOb"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="ITCAvantGard  Bk"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="ITCAvantGard  Db"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="ITCAvantGardBkOb"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="ITCAvantGardDbOb"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[ITC Bookman]
+FontDataCount=8
+
+CmdFont0="ITCBookman    Lt"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCBookman    Db"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="ITCBookman  LtIt"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="ITCBookman  DbIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="ITCBookman    Lt"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="ITCBookman    Db"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="ITCBookman  LtIt"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="ITCBookman  DbIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[CourierPS]
+FontDataCount=8
+
+CmdFont0="CourierPS       "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="CourierPS     Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=0
+FontOptDLFont1=0
+
+CmdFont2="CourierPS     Ob"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=0
+FontOptDLFont2=0
+
+CmdFont3="CourierPS   BdOb"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=0
+FontOptDLFont3=0
+
+CmdFont4="CourierPS       "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=0
+FontOptDLFont4=0
+
+CmdFont5="CourierPS     Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=0
+FontOptDLFont5=0
+
+CmdFont6="CourierPS     Ob"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=0
+FontOptDLFont6=0
+
+CmdFont7="CourierPS   BdOb"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=0
+FontOptDLFont7=0
+
+[Helvetica]
+FontDataCount=8
+
+CmdFont0="Helvetica       "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica     Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Helvetica     Ob"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Helvetica   BdOb"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Helvetica       "
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Helvetica     Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Helvetica     Ob"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Helvetica   BdOb"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Helvetica Narrow]
+FontDataCount=8
+
+CmdFont0="Helvetica     Nr"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica   NrBd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Helvetica   NrOb"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Helvetica NrBdOb"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Helvetica     Nr"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Helvetica   NrBd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Helvetica   NrOb"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Helvetica NrBdOb"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[New Century Schoolbook]
+FontDataCount=8
+
+CmdFont0="NwCentSchlbk Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="NwCentSchlbk  Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="NwCentSchlbk  It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="NwCentSchlbkBdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="NwCentSchlbk Rmn"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="NwCentSchlbk  Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="NwCentSchlbk  It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="NwCentSchlbkBdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[Palatino]
+FontDataCount=8
+
+CmdFont0="Palatino     Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Palatino      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Palatino      It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Palatino    BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Palatino     Rmn"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Palatino      Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Palatino      It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Palatino    BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[SymbolPS]
+FontDataCount=1
+
+CmdFont0="SymbolPS        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=2
+FontSymSetID0=621
+FontOptPitch0=1
+FontOptDLFont0=0
+
+[Times]
+FontDataCount=8
+
+CmdFont0="Times        Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Times         Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=0
+FontSymSetID1=629
+FontOptPitch1=1
+FontOptDLFont1=0
+
+CmdFont2="Times         It"
+FontWeight2=400
+FontItalic2=1
+FontCharset2=0
+FontSymSetID2=629
+FontOptPitch2=1
+FontOptDLFont2=0
+
+CmdFont3="Times       BdIt"
+FontWeight3=700
+FontItalic3=1
+FontCharset3=0
+FontSymSetID3=629
+FontOptPitch3=1
+FontOptDLFont3=0
+
+CmdFont4="Times        Rmn"
+FontWeight4=400
+FontItalic4=0
+FontCharset4=238
+FontSymSetID4=293
+FontOptPitch4=1
+FontOptDLFont4=0
+
+CmdFont5="Times         Bd"
+FontWeight5=700
+FontItalic5=0
+FontCharset5=238
+FontSymSetID5=293
+FontOptPitch5=1
+FontOptDLFont5=0
+
+CmdFont6="Times         It"
+FontWeight6=400
+FontItalic6=1
+FontCharset6=238
+FontSymSetID6=293
+FontOptPitch6=1
+FontOptDLFont6=0
+
+CmdFont7="Times       BdIt"
+FontWeight7=700
+FontItalic7=1
+FontCharset7=238
+FontSymSetID7=293
+FontOptPitch7=1
+FontOptDLFont7=0
+
+[ITC Zapf Chancery Medium Italic]
+FontDataCount=2
+
+CmdFont0="ZapfChanceryMdIt"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ZapfChanceryMdIt"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Zapf Dingbats]
+FontDataCount=1
+
+CmdFont0="ZapfDingbats    "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=2
+FontSymSetID0=460
+FontOptPitch0=1
+FontOptDLFont0=0
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+[Antique Olive Regular]
+FontDataCount=2
+
+CmdFont0="AntiqOlive      "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="AntiqOlive      "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Antique Olive Bold]
+FontDataCount=2
+
+CmdFont0="AntiqOlive    Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="AntiqOlive    Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Antique Olive Italic]
+FontDataCount=2
+
+CmdFont0="AntiqOlive    It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="AntiqOlive    It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Arial Regular]
+FontDataCount=2
+
+CmdFont0="Arial           "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Arial           "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Arial Bold]
+FontDataCount=2
+
+CmdFont0="Arial         Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Arial         Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Arial Italic]
+FontDataCount=2
+
+CmdFont0="Arial         It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Arial         It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Arial Bold Italic]
+FontDataCount=2
+
+CmdFont0="Arial       BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Arial       BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Times Regular]
+FontDataCount=2
+
+CmdFont0="CG Times        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Times        "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Times Bold]
+FontDataCount=2
+
+CmdFont0="CG Times      Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Times      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Times Italic]
+FontDataCount=2
+
+CmdFont0="CG Times      It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Times      It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Times Bold Italic]
+FontDataCount=2
+
+CmdFont0="CG Times    BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Times    BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Omega Regular]
+FontDataCount=2
+
+CmdFont0="CG Omega        "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Omega        "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Omega Bold]
+FontDataCount=2
+
+CmdFont0="CG Omega      Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Omega      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Omega Italic]
+FontDataCount=2
+
+CmdFont0="CG Omega      It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Omega      It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CG Omega Bold Italic]
+FontDataCount=2
+
+CmdFont0="CG Omega    BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="CG Omega    BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Courier Regular]
+FontDataCount=2
+
+CmdFont0="Courier         "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="Courier         "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Courier Bold]
+FontDataCount=2
+
+CmdFont0="Courier       Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="Courier       Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Courier Italic]
+FontDataCount=2
+
+CmdFont0="Courier       It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="Courier       It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Courier Bold Italic]
+FontDataCount=2
+
+CmdFont0="Courier     BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="Courier     BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Garamond Antiqua]
+FontDataCount=2
+
+CmdFont0="Garamond Antiqua"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Garamond Antiqua"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Garamond Halbfett]
+FontDataCount=2
+
+CmdFont0="Garamond     Hlb"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Garamond     Hlb"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Garamond Kursiv]
+FontDataCount=2
+
+CmdFont0="Garamond    Krsv"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Garamond    Krsv"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Garamond Kursiv Halbfett]
+FontDataCount=2
+
+CmdFont0="Garamond KrsvHlb"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Garamond KrsvHlb"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Letter Gothic Regular]
+FontDataCount=2
+
+CmdFont0="LetterGothic    "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="LetterGothic    "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Letter Gothic Bold]
+FontDataCount=2
+
+CmdFont0="LetterGothic  Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="LetterGothic  Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Letter Gothic Italic]
+FontDataCount=2
+
+CmdFont0="LetterGothic  It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="LetterGothic  It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Times New Roman Regular]
+FontDataCount=2
+
+CmdFont0="TimesNewRmn     "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="TimesNewRmn     "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times New Roman Bold]
+FontDataCount=2
+
+CmdFont0="TimesNewRmn   Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="TimesNewRmn   Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times New Roman Italic]
+FontDataCount=2
+
+CmdFont0="TimesNewRmn   It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="TimesNewRmn   It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times New Roman Bold Italic]
+FontDataCount=2
+
+CmdFont0="TimesNewRmn BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="TimesNewRmn BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Medium]
+FontDataCount=2
+
+CmdFont0="Univers       Md"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers       Md"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Bold]
+FontDataCount=2
+
+CmdFont0="Univers       Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers       Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Medium Italic]
+FontDataCount=2
+
+CmdFont0="Univers     MdIt"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers     MdIt"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Bold Italic]
+FontDataCount=2
+
+CmdFont0="Univers     BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers     BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Condensed Medium]
+FontDataCount=2
+
+CmdFont0="Univers     CdMd"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers     CdMd"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Condensed Bold]
+FontDataCount=2
+
+CmdFont0="Univers     CdBd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers     CdBd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Condensed Medium Italic]
+FontDataCount=2
+
+CmdFont0="Univers   CdMdIt"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers   CdMdIt"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Univers Condensed Bold Italic]
+FontDataCount=2
+
+CmdFont0="Univers   CdBdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Univers   CdBdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Avant Garde Gothic Book]
+FontDataCount=2
+
+CmdFont0="ITCAvantGard  Bk"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCAvantGard  Bk"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Avant Garde Gothic Demi]
+FontDataCount=2
+
+CmdFont0="ITCAvantGard  Db"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCAvantGard  Db"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Avant Garde Gothic Book Oblique]
+FontDataCount=2
+
+CmdFont0="ITCAvantGardBkOb"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCAvantGardBkOb"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Avant Garde Gothic Demi Oblique]
+FontDataCount=2
+
+CmdFont0="ITCAvantGardDbOb"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCAvantGardDbOb"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Bookman Light]
+FontDataCount=2
+
+CmdFont0="ITCBookman    Lt"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCBookman    Lt"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Bookman Light Demi]
+FontDataCount=2
+
+CmdFont0="ITCBookman    Db"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCBookman    Db"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Bookman Light Italic]
+FontDataCount=2
+
+CmdFont0="ITCBookman  LtIt"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCBookman  LtIt"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[ITC Bookman Light Demi Italic]
+FontDataCount=2
+
+CmdFont0="ITCBookman  DbIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="ITCBookman  DbIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[CourierPS Regular]
+FontDataCount=2
+
+CmdFont0="CourierPS       "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="CourierPS       "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[CourierPS Bold]
+FontDataCount=2
+
+CmdFont0="CourierPS     Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="CourierPS     Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[CourierPS Oblique]
+FontDataCount=2
+
+CmdFont0="CourierPS     Ob"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="CourierPS     Ob"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[CourierPS Bold Oblique]
+FontDataCount=2
+
+CmdFont0="CourierPS   BdOb"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=0
+FontOptDLFont0=0
+
+CmdFont1="CourierPS   BdOb"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=0
+FontOptDLFont1=0
+
+[Helvetica Regular]
+FontDataCount=2
+
+CmdFont0="Helvetica       "
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica       "
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Bold]
+FontDataCount=2
+
+CmdFont0="Helvetica     Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica     Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Oblique]
+FontDataCount=2
+
+CmdFont0="Helvetica     Ob"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica     Ob"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Bold Oblique
+FontDataCount=2
+
+CmdFont0="Helvetica   BdOb"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica   BdOb"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Narrow Regular]
+FontDataCount=2
+
+CmdFont0="Helvetica     Nr"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica     Nr"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Narrow Bold]
+FontDataCount=2
+
+CmdFont0="Helvetica   NrBd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica   NrBd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Narrow Oblique
+FontDataCount=2
+
+CmdFont0="Helvetica   NrOb"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica   NrOb"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Helvetica Narrow Bold Oblique]
+FontDataCount=2
+
+CmdFont0="Helvetica NrBdOb"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Helvetica NrBdOb"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[New Century Schoolbook Regular]
+FontDataCount=2
+
+CmdFont0="NwCentSchlbk Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="NwCentSchlbk Rmn"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[New Century Schoolbook Bold]
+FontDataCount=2
+
+CmdFont0="NwCentSchlbk  Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="NwCentSchlbk  Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[New Century Schoolbook Italic]
+FontDataCount=2
+
+CmdFont0="NwCentSchlbk  It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="NwCentSchlbk  It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[New Century Schoolbook Bold Italic]
+FontDataCount=2
+
+CmdFont0="NwCentSchlbkBdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="NwCentSchlbkBdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Palatino Roman]
+FontDataCount=2
+
+CmdFont0="Palatino     Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Palatino     Rmn"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Palatino Bold]
+FontDataCount=2
+
+CmdFont0="Palatino      Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Palatino      Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Palatino Italic]
+FontDataCount=2
+
+CmdFont0="Palatino      It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Palatino      It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Palatino Bold Italic]
+FontDataCount=2
+
+CmdFont0="Palatino    BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Palatino    BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times Roman]
+FontDataCount=2
+
+CmdFont0="Times        Rmn"
+FontWeight0=400
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Times        Rmn"
+FontWeight1=400
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times Bold]
+FontDataCount=2
+
+CmdFont0="Times         Bd"
+FontWeight0=700
+FontItalic0=0
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Times         Bd"
+FontWeight1=700
+FontItalic1=0
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times Italic]
+FontDataCount=2
+
+CmdFont0="Times         It"
+FontWeight0=400
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Times         It"
+FontWeight1=400
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+[Times Bold Italic]
+FontDataCount=2
+
+CmdFont0="Times       BdIt"
+FontWeight0=700
+FontItalic0=1
+FontCharset0=0
+FontSymSetID0=629
+FontOptPitch0=1
+FontOptDLFont0=0
+
+CmdFont1="Times       BdIt"
+FontWeight1=700
+FontItalic1=1
+FontCharset1=238
+FontSymSetID1=293
+FontOptPitch1=1
+FontOptDLFont1=0
+
+

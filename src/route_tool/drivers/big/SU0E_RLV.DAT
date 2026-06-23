@@ -1,0 +1,1644 @@
+[Installation]
+
+ReleaseVersion=24
+ReleaseExtention=USA
+ReleaseBuildDate=2020/10/21
+
+DriverCopyRight1=Copyright (c) 2015-2021 SHARP CORPORATION. All rights reserved.
+DriverCopyRight2=
+DriverCopyRight3=
+DriverCopyRight4=
+ResourceTypeRtoL=0
+
+[SHARP MX-3060N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3060N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3070N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3070N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3560N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3560N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3570N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3570N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4060N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4060N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4070N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4070N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5070N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-5070N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=50
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-6070N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-6070N PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=60
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-3050N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3050N PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-3550N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3550N PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-4050N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4050N PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-5050N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-5050N PCL6
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=50
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-6050N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-6050N PCL6
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=60
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-6580N PCL6]
+model_ID=22
+emulation_ID=13
+ModelName=MX-6580N PCL6
+
+ini_mcf=su0eud64.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm64.tbl
+
+ppm=65
+output_unicode=1
+DitherID=6
+CenterTrayEna=1
+
+
+[SHARP MX-7580N PCL6]
+model_ID=22
+emulation_ID=13
+ModelName=MX-7580N PCL6
+
+ini_mcf=su0eud64.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm64.tbl
+
+ppm=75
+output_unicode=1
+DitherID=6
+CenterTrayEna=1
+
+
+[SHARP MX-7090N PCL6]
+model_ID=23
+emulation_ID=13
+ModelName=MX-7090N PCL6
+
+ini_mcf=su0eud65.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm65.tbl
+
+ppm=70
+output_unicode=1
+DitherID=7
+CenterTrayEna=1
+
+
+[SHARP MX-8090N PCL6]
+model_ID=23
+emulation_ID=13
+ModelName=MX-8090N PCL6
+
+ini_mcf=su0eud65.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm65.tbl
+
+ppm=80
+output_unicode=1
+DitherID=7
+CenterTrayEna=1
+
+
+[SHARP MX-M905 PCL6]
+model_ID=24
+emulation_ID=13
+ModelName=MX-M905 PCL6
+
+ini_mcf=su0eud66.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm66.tbl
+
+ppm=90
+output_unicode=1
+DitherID=5
+CenterTrayEna=1
+
+
+[SHARP MX-M3070 PCL6]
+model_ID=26
+emulation_ID=13
+ModelName=MX-M3070 PCL6
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=30
+output_unicode=1
+DitherID=8
+CenterTrayEna=1
+
+
+[SHARP MX-M3570 PCL6]
+model_ID=26
+emulation_ID=13
+ModelName=MX-M3570 PCL6
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=35
+output_unicode=1
+DitherID=8
+CenterTrayEna=1
+
+
+[SHARP MX-M4070 PCL6]
+model_ID=26
+emulation_ID=13
+ModelName=MX-M4070 PCL6
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=40
+output_unicode=1
+DitherID=8
+CenterTrayEna=1
+
+
+[SHARP MX-M5070 PCL6]
+model_ID=26
+emulation_ID=13
+ModelName=MX-M5070 PCL6
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=50
+output_unicode=1
+DitherID=9
+CenterTrayEna=1
+
+
+[SHARP MX-M6070 PCL6]
+model_ID=26
+emulation_ID=13
+ModelName=MX-M6070 PCL6
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=60
+output_unicode=1
+DitherID=9
+CenterTrayEna=1
+
+
+[SHARP MX-M3050 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M3050 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=30
+output_unicode=1
+DitherID=10
+CenterTrayEna=1
+
+
+[SHARP MX-M3550 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M3550 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=35
+output_unicode=1
+DitherID=10
+CenterTrayEna=1
+
+
+[SHARP MX-M4050 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M4050 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=40
+output_unicode=1
+DitherID=10
+CenterTrayEna=1
+
+
+[SHARP MX-M5050 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M5050 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=50
+output_unicode=1
+DitherID=11
+CenterTrayEna=1
+
+
+[SHARP MX-M6050 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M6050 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=60
+output_unicode=1
+DitherID=11
+CenterTrayEna=1
+
+
+[SHARP MX-2630N PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-2630N PCL6
+
+ini_mcf=su0eud69.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=26
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-7090N(BM) PCL6]
+model_ID=25
+emulation_ID=13
+ModelName=MX-7090N(BM) PCL6
+
+ini_mcf=su0eud6a.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6a.tbl
+
+ppm=70
+output_unicode=1
+DitherID=7
+CenterTrayEna=1
+
+
+[SHARP MX-8090N(BM) PCL6]
+model_ID=25
+emulation_ID=13
+ModelName=MX-8090N(BM) PCL6
+
+ini_mcf=su0eud6a.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6a.tbl
+
+ppm=80
+output_unicode=1
+DitherID=7
+CenterTrayEna=1
+
+
+[SHARP MX-B355W PCL6]
+model_ID=28
+emulation_ID=13
+ModelName=MX-B355W PCL6
+
+ini_mcf=su0eud6b.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6b.tbl
+
+ppm=35
+output_unicode=1
+DitherID=12
+CenterTrayEna=1
+
+
+[SHARP MX-B455W PCL6]
+model_ID=28
+emulation_ID=13
+ModelName=MX-B455W PCL6
+
+ini_mcf=su0eud6b.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6b.tbl
+
+ppm=45
+output_unicode=1
+DitherID=13
+CenterTrayEna=1
+
+
+[SHARP MX-3060V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3060V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3070V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3070V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3560V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3560V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3570V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3570V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4060V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4060V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4070V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4070V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5070V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-5070V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=50
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-6070V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-6070V PCL6
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=60
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-3050V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3050V PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=30
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-3550V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-3550V PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=35
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-4050V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-4050V PCL6
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-5050V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-5050V PCL6
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=50
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-6050V PCL6]
+model_ID=21
+emulation_ID=13
+ModelName=MX-6050V PCL6
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=60
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-M2630 PCL6]
+model_ID=27
+emulation_ID=13
+ModelName=MX-M2630 PCL6
+
+ini_mcf=su0eud68.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=26
+output_unicode=1
+DitherID=10
+CenterTrayEna=1
+
+
+[SHARP MX-B350W PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B350W PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP AR-B351W PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B351W PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-B350F PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B350F PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP AR-B351F PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B351F PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-B350 PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B350 PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP AR-B351 PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B351 PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-B450W PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B450W PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP AR-B451W PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B451W PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP MX-B450F PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B450F PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP AR-B451F PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B451F PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP MX-B450 PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=MX-B450 PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP AR-B451 PCL6]
+model_ID=29
+emulation_ID=13
+ModelName=AR-B451 PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP MX-B350P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=MX-B350P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP AR-B352P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=AR-B352P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-B351P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=MX-B351P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP AR-B353P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=AR-B353P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-B450P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=MX-B450P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP AR-B452P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=AR-B452P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP MX-B451P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=MX-B451P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP AR-B453P PCL6]
+model_ID=30
+emulation_ID=13
+ModelName=AR-B453P PCL6
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=45
+output_unicode=0
+DitherID=15
+CenterTrayEna=1
+
+
+[SHARP MX-M6570 PCL6]
+model_ID=31
+emulation_ID=13
+ModelName=MX-M6570 PCL6
+
+ini_mcf=su0eud6d.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6d.tbl
+
+ppm=65
+output_unicode=1
+DitherID=16
+CenterTrayEna=1
+
+
+[SHARP MX-M7570 PCL6]
+model_ID=31
+emulation_ID=13
+ModelName=MX-M7570 PCL6
+
+ini_mcf=su0eud6d.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6d.tbl
+
+ppm=75
+output_unicode=1
+DitherID=17
+CenterTrayEna=1
+
+
+[SHARP MX-4170FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-4170FN SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=41
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5170FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-5170FN SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=51
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-6170FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-6170FN SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=61
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-2650FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-2650FN SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=26
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3150FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-3150FN SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=31
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3650FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-3650FN SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=36
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4150FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-4150FN SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=41
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5150FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-5150FN SPDL2-c
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=51
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-6150FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-6150FN SPDL2-c
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=61
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-M4070 SPDL2]
+model_ID=26
+emulation_ID=3
+ModelName=MX-M4070 SPDL2
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=40
+output_unicode=1
+DitherID=8
+CenterTrayEna=1
+
+
+[SHARP MX-M5070 SPDL2]
+model_ID=26
+emulation_ID=3
+ModelName=MX-M5070 SPDL2
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=50
+output_unicode=1
+DitherID=9
+CenterTrayEna=1
+
+
+[SHARP MX-M6070 SPDL2]
+model_ID=26
+emulation_ID=3
+ModelName=MX-M6070 SPDL2
+
+ini_mcf=su0eud67.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm67.tbl
+
+ppm=60
+output_unicode=1
+DitherID=9
+CenterTrayEna=1
+
+
+[SHARP MX-2630FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-2630FN SPDL2-c
+
+ini_mcf=su0eud69.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=26
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-3630FN SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-3630FN SPDL2-c
+
+ini_mcf=su0eud69.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=36
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+
+[SHARP MX-B455W SPDL2]
+model_ID=28
+emulation_ID=3
+ModelName=MX-B455W SPDL2
+
+ini_mcf=su0eud6b.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6b.tbl
+
+ppm=45
+output_unicode=1
+DitherID=13
+CenterTrayEna=1
+
+
+[SHARP MX-4170FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-4170FV SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=41
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5170FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-5170FV SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=51
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-6170FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-6170FV SPDL2-c
+
+ini_mcf=su0eud61.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=61
+output_unicode=1
+DitherID=4
+CenterTrayEna=1
+
+
+[SHARP MX-2650FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-2650FV SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=26
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3150FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-3150FV SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=31
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-3650FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-3650FV SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=36
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-4150FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-4150FV SPDL2-c
+
+ini_mcf=su0eud63.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=41
+output_unicode=1
+DitherID=1
+CenterTrayEna=1
+
+
+[SHARP MX-5150FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-5150FV SPDL2-c
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=51
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP MX-6150FV SPDL2-c]
+model_ID=21
+emulation_ID=3
+ModelName=MX-6150FV SPDL2-c
+
+ini_mcf=su0eud62.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm61.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm61.tbl
+
+ppm=61
+output_unicode=1
+DitherID=3
+CenterTrayEna=1
+
+
+[SHARP AR-B350W SPDL2]
+model_ID=29
+emulation_ID=3
+ModelName=AR-B350W SPDL2
+
+ini_mcf=su0eud6c.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6c.tbl
+
+ppm=35
+output_unicode=0
+DitherID=14
+CenterTrayEna=1
+
+
+[SHARP MX-M6570 SPDL2]
+model_ID=31
+emulation_ID=3
+ModelName=MX-M6570 SPDL2
+
+ini_mcf=su0eud6d.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6d.tbl
+
+ppm=65
+output_unicode=1
+DitherID=16
+CenterTrayEna=1
+
+
+[SHARP MX-M7570 SPDL2]
+model_ID=31
+emulation_ID=3
+ModelName=MX-M7570 SPDL2
+
+ini_mcf=su0eud6d.mcf
+ini_paperinf=su0epi61.dat
+ini_language=su0ewm66.dat
+ini_font=su0eft61.dat
+ini_limit=su0elm6d.tbl
+
+ppm=75
+output_unicode=1
+DitherID=17
+CenterTrayEna=1
+
+

@@ -1,0 +1,79 @@
+[Installation]
+
+ReleaseVersion=58
+ReleaseExtention=USA
+ReleaseBuildDate=2021/09/17
+
+DriverCopyRight1=Copyright (c) 2019 SHARP CORPORATION. All rights reserved.
+DriverCopyRight2=
+DriverCopyRight3=
+DriverCopyRight4=
+ResourceTypeRtoL=0
+
+[SHARP UD3 PCL6]
+model_ID=36
+emulation_ID=13
+ModelName=UD3 PCL6
+
+ini_mcf=SV0EUD63.mcf
+ini_paperinf=SV0EPI61.dat
+ini_language=SV0EWM61.dat
+ini_font=SV0EFT61.dat
+ini_limit=SV0ELM61.tbl
+
+ppm=40
+output_unicode=1
+DitherID=2
+CenterTrayEna=1
+
+model_ID_Color=36
+model_ID_Mono=31
+CommonSetting=1
+;By Default SetupType = 0 but now for MS task it has been made to 1. It will be removed later.
+SetupType=0
+;<S><C> Supporting Language selection for UD3 (MS6) , 2015.12.09, SSDI:Chandrashekar.V
+SupportLang=23085,23086,23087,23088,23089,23090,23091,23092,23093,23094,23109,23106,23107,23108,23110
+;<E> Supporting Language selection for UD3 (MS6) , 2015.12.09, SSDI:Chandrashekar.V
+;<S><A> RedMine Ticket(#604) Individualized Special UD2 Driver, 2013.05.02, SSDI:Padma
+;If DefaultLang value is set with other than the supporting Language ID, English will be the default language.
+DefaultLang=0
+;English -> 0
+;French -> 1
+;Spanish -> 2
+;German -> 3
+;Dutch -> 4
+;Italian -> 5
+;Swedish -> 6
+;Finnish -> 7
+;Danish -> 8
+;Norwegian -> 9
+;Portuguese (Portugal) -> 10
+;Japanese -> 11
+;Chinese (Simplified) -> 12
+;Chinese (Traditional) -> 13
+;Portuguese (Brasil) -> 14
+;<E> RedMine Ticket(#604) Individualized Special UD2 Driver, 2013.05.02, SSDI:Padma
+;<S><A> Supported LANGIDs, 2019.01.18, SSDI:Padma
+SupportedLANGIDs=9,12,10,7,19,16,29,11,6,20,2070,17,2052,1028,1046
+;English -> primary lang ID is 0x09 
+;French -> primary lang ID is 0x0c
+;Spanish -> primary lang ID is 0x0a
+;German -> primary lang ID is 0x07
+;Dutch -> primary lang ID is 0x13
+;Italian -> primary lang ID is 0x10
+;Swedish -> primary lang ID is 0x1d
+;Finnish -> primary lang ID is 0x0b
+;Danish -> primary lang ID is 0x06
+;Norwegian -> primary lang ID is 0x14
+;Portuguese (Portugal) -> lang ID is 0x0816 
+;Japanese -> primary lang ID is 0x11
+;Chinese (Simplified) -> lang ID is 0x0804 
+;Chinese (Traditional) -> lang ID is 0x0404 
+;Portuguese (Brasil) -> lang ID is 0x0416 
+;<E> Supported LANGIDs, 2019.01.18, SSDI:Padma
+;<S><A> Supporting the printer selection search type for UD3 (Sprint 11), 2019.03.11, SSDI:Seetharam
+PrinterSearchType=23117,23116
+;<E> Supporting the printer selection search type for UD3 (Sprint 11), 2019.03.11, SSDI:Seetharam
+;<S><A> Supporting the port selection type for UD3 (Sprint 12), 2019.03.19, SSDI:Seetharam
+PortType=23070,23071
+;<E> Supporting the port selection type for UD3 (Sprint 12), 2019.03.19, SSDI:Seetharam
