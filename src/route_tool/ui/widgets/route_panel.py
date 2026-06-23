@@ -30,6 +30,7 @@ class RoutePanel(ctk.CTkFrame):
         on_check_route: Callable[[], bool],
         on_add_route: Callable[[RouteInfo], Result],
         on_log: Callable[[str, str], None],
+        on_gateway_state_change: Callable[[bool], None] | None = None,
         **kwargs,
     ):
         super().__init__(master, **kwargs)
@@ -38,6 +39,7 @@ class RoutePanel(ctk.CTkFrame):
         self._on_check_route = on_check_route
         self._on_add_route = on_add_route
         self._on_log = on_log
+        self._on_gateway_state_change = on_gateway_state_change
 
         # 最近一次的网络信息与路由状态（用于联动判断按钮是否可用）
         self._network_info: NetworkInfo | None = None
@@ -150,6 +152,9 @@ class RoutePanel(ctk.CTkFrame):
                 f"请确认已连接公司内网后重试",
                 "warning",
             )
+        # 通知外部（如 PrinterPanel）联动按钮启用状态
+        if self._on_gateway_state_change:
+            self._on_gateway_state_change(info.gateway522_reachable)
 
     def _update_route_status(self, exists: bool) -> None:
         """更新路由状态行，并据此 + 网络可达性决定按钮是否可用。"""
