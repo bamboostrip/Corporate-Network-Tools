@@ -35,5 +35,22 @@ def test_test_targets_are_printers():
     assert all(isinstance(t, PrinterInfo) for t in TEST_TARGETS)
     ips = [t.ip for t in TEST_TARGETS]
     assert "192.168.0.210" in ips  # 大打印机
-    assert "192.168.0.248" in ips  # 小打印机
+    assert "192.168.0.241" in ips  # 小打印机（修正：原 248 错误）
     assert "192.168.0.1" in ips    # 锐捷网关
+
+
+def test_printer_defs():
+    from route_tool.core.config import PRINTER_DEFS
+    from route_tool.core.models import PrinterTarget
+    assert len(PRINTER_DEFS) == 2
+    assert all(isinstance(p, PrinterTarget) for p in PRINTER_DEFS)
+
+    big = PRINTER_DEFS[0]
+    assert big.name == "大打印机"
+    assert big.ip == "192.168.0.210"
+    assert "MX-M905C" in big.description
+
+    small = PRINTER_DEFS[1]
+    assert small.name == "小打印机"
+    assert small.ip == "192.168.0.241"  # 修正：原 248 是错的
+    assert "MX-C6082D" in small.description

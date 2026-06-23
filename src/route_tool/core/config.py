@@ -2,7 +2,7 @@
 
 如未来需要频繁变更，可改为从 config.toml 读取；当前按 YAGNI 保持写死。
 """
-from route_tool.core.models import PrinterInfo, RouteInfo
+from route_tool.core.models import PrinterInfo, PrinterTarget, RouteInfo
 
 # === 路由配置 ===
 TARGET_NETWORK = "192.168.0.0"
@@ -23,10 +23,27 @@ DEFAULT_ROUTE = RouteInfo(
 # === 连通性测试目标 ===
 TEST_TARGETS: list[PrinterInfo] = [
     PrinterInfo(name="大打印机", ip="192.168.0.210", icon="🖨"),
-    PrinterInfo(name="小打印机", ip="192.168.0.248", icon="🖨"),
+    PrinterInfo(name="小打印机", ip="192.168.0.241", icon="🖨"),  # 修正：原 248 错误
     PrinterInfo(name="锐捷网关", ip="192.168.0.1", icon="🌐"),
 ]
 
 # === ping 参数 ===
 PING_COUNT = 2
 PING_TIMEOUT_SECONDS = 10
+
+# === 打印机定义（用于自动添加） ===
+BIG_PRINTER = PrinterTarget(
+    name="大打印机",
+    description="SHARP MX-M905C 彩色复合机",
+    ip="192.168.0.210",
+    driver_label="big",
+    port=9100,
+)
+SMALL_PRINTER = PrinterTarget(
+    name="小打印机",
+    description="SHARP MX-C6082D",
+    ip="192.168.0.241",
+    driver_label="small",
+    port=9100,
+)
+PRINTER_DEFS: list[PrinterTarget] = [BIG_PRINTER, SMALL_PRINTER]
