@@ -83,3 +83,21 @@ def test_backend_get_network_info_unreachable():
     assert info.wifi_name == "未连接"
     assert info.local_ip == "未知"
     assert "超时" in info.gateway522_message or "不可达" in info.gateway522_message
+
+
+def test_backend_printer_exists_delegates():
+    from route_tool.core.models import PrinterTarget
+    target = PrinterTarget(name="大打印机", description="x", ip="1.2.3.4", driver_label="big")
+    with patch("route_tool.platform.windows.backend._printer_exists", return_value=True) as mock:
+        assert WindowsBackend().printer_exists(target) is True
+    mock.assert_called_once_with(target)
+
+
+def test_backend_add_printer_delegates():
+    from route_tool.core.models import PrinterTarget, PrinterInstallResult
+    target = PrinterTarget(name="大打印机", description="x", ip="1.2.3.4", driver_label="big")
+    fake = PrinterInstallResult(printer_name="大打印机", ok=True, message="ok")
+    with patch("route_tool.platform.windows.backend._add_printer", return_value=fake) as mock:
+        result = WindowsBackend().add_printer(target)
+    assert result is fake
+    mock.assert_called_once_with(target)

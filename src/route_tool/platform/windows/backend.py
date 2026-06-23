@@ -2,11 +2,15 @@
 from __future__ import annotations
 
 from route_tool.core.config import GATEWAY, PING_COUNT
-from route_tool.core.models import NetworkInfo, PingResult, Result, RouteInfo
+from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, RouteInfo
 from route_tool.core.network_util import get_local_ip as _get_local_ip
 from route_tool.platform.windows.admin import is_admin
 from route_tool.platform.windows.connectivity import ping as _ping
 from route_tool.platform.windows.network import get_wifi_ssid as _get_wifi_ssid
+from route_tool.platform.windows.printers import (
+    add_printer as _add_printer,
+    printer_exists as _printer_exists,
+)
 from route_tool.platform.windows.routes import (
     add_route as _add_route,
     remove_route as _remove_route,
@@ -45,3 +49,9 @@ class WindowsBackend:
             gateway522_reachable=result.ok,
             gateway522_message=result.message,
         )
+
+    def printer_exists(self, target: PrinterTarget) -> bool:
+        return _printer_exists(target)
+
+    def add_printer(self, target: PrinterTarget) -> PrinterInstallResult:
+        return _add_printer(target)

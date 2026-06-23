@@ -107,3 +107,21 @@ def test_backend_get_network_info_unreachable():
     assert info.gateway522_reachable is False
     assert info.wifi_name == "未连接"
     assert info.local_ip == "未知"
+
+
+def test_backend_printer_exists_delegates():
+    from route_tool.core.models import PrinterTarget
+    target = PrinterTarget(name="大打印机", description="x", ip="1.2.3.4", driver_label="big")
+    with patch("route_tool.platform.macos.backend._printer_exists", return_value=True) as mock:
+        assert MacBackend().printer_exists(target) is True
+    mock.assert_called_once_with(target)
+
+
+def test_backend_add_printer_delegates():
+    from route_tool.core.models import PrinterTarget, PrinterInstallResult
+    target = PrinterTarget(name="大打印机", description="x", ip="1.2.3.4", driver_label="big")
+    fake = PrinterInstallResult(printer_name="大打印机", ok=True, message="ok")
+    with patch("route_tool.platform.macos.backend._add_printer", return_value=fake) as mock:
+        result = MacBackend().add_printer(target)
+    assert result is fake
+    mock.assert_called_once_with(target)

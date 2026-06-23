@@ -10,9 +10,13 @@ import re
 import subprocess
 
 from route_tool.core.config import GATEWAY, PING_COUNT, PING_TIMEOUT_SECONDS
-from route_tool.core.models import NetworkInfo, PingResult, Result, ResultLevel, RouteInfo
+from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, ResultLevel, RouteInfo
 from route_tool.core.network_util import get_local_ip as _get_local_ip
 from route_tool.platform.macos.network import get_wifi_ssid as _get_wifi_ssid
+from route_tool.platform.macos.printers import (
+    add_printer as _add_printer,
+    printer_exists as _printer_exists,
+)
 
 # 255.255.252.0 -> 22（前缀长度），用二进制 1 的个数
 _MASK_TO_PREFIX = {
@@ -134,3 +138,9 @@ class MacBackend:
             gateway522_reachable=result.ok,
             gateway522_message=result.message,
         )
+
+    def printer_exists(self, target: PrinterTarget) -> bool:
+        return _printer_exists(target)
+
+    def add_printer(self, target: PrinterTarget) -> PrinterInstallResult:
+        return _add_printer(target)
