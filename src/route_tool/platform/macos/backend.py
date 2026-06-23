@@ -152,3 +152,7 @@ class MacBackend:
             message="macOS 暂不支持扫描共享网络位置，请手动连接 SMB 共享",
             error_code=-1,
         )
+
+    def scan_share_exists(self) -> bool:
+        return False
+

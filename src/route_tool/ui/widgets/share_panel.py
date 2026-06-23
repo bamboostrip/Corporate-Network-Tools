@@ -100,3 +100,10 @@ class SharePanel(ctk.CTkFrame):
             self._status.configure(text="✗ 失败")
             self._btn.configure(state="normal", text="重试")
             self._on_log(f"✗ 扫描共享添加失败: {result.message}", "error")
+
+    def update_share_status(self, exists: bool) -> None:
+        """从外部检测后调用，更新共享文件夹添加状态。"""
+        if exists:
+            self._status.configure(text="✓ 已存在")
+            self._btn.configure(state="disabled", text="已添加")
+

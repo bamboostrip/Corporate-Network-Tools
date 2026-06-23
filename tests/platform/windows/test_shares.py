@@ -4,8 +4,9 @@ from pathlib import Path
 
 from route_tool.platform.windows.shares import (
     save_credential, create_network_location, add_scan_share,
-    network_shortcuts_dir, build_cmdkey_command,
+    network_shortcuts_dir, build_cmdkey_command, scan_share_exists,
 )
+
 
 
 # === build_cmdkey_command：构造凭据命令 ===
@@ -120,3 +121,21 @@ def test_add_scan_share_credential_failure():
         result = add_scan_share(r"\\x\y", "u", "p", "name")
     assert result.ok is False
     mock_loc.assert_not_called()  # 凭据失败不应继续建网络位置
+
+
+# === scan_share_exists ===
+
+def test_scan_share_exists_true(tmp_path):
+    """如果网络快捷方式 .lnk 文件存在，返回 True。"""
+    (tmp_path / "SMY扫描.lnk").write_bytes(b"")
+    with patch("route_tool.platform.windows.shares.network_shortcuts_dir", return_value=tmp_path):
+        result = scan_share_exists("SMY扫描")
+    assert result is True
+
+
+def test_scan_share_exists_false(tmp_path):
+    """如果网络快捷方式 .lnk 文件不存在，返回 False。"""
+    with patch("route_tool.platform.windows.shares.network_shortcuts_dir", return_value=tmp_path):
+        result = scan_share_exists("SMY扫描")
+    assert result is False
+

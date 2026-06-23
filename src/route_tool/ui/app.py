@@ -103,8 +103,11 @@ class MainApp(ctk.CTk):
         self._share_panel.grid(row=4, column=0, padx=0, pady=8, sticky="ew")
         self._log_panel.grid(row=5, column=0, padx=0, pady=(0, 8), sticky="ew")
 
-        # 启动后自动检测网络环境（WiFi/IP/5.22 可达性）+ 路由状态
+        # 启动后自动检测网络环境（WiFi/IP/5.22 可达性）+ 路由状态，以及刷新打印机和共享位置状态
         self.after(100, self._route_panel.check_prerequisite_async)
+        self.after(200, self._refresh_printer_panel_status)
+        self.after(300, self._refresh_share_panel_status)
+
 
     def _check_route(self) -> bool:
         """路由检查的封装（route_exists 需要 RouteInfo 参数，这里固定用 DEFAULT_ROUTE）。"""
@@ -128,8 +131,9 @@ class MainApp(ctk.CTk):
         """部署完成后，刷新各分模块面板状态（让用户看到每项的实际状态）。"""
         # 重新检测路由和网络环境（更新路由面板显示 + 触发按钮联动）
         self._route_panel.check_prerequisite_async()
-        # 刷新打印机面板每行的状态（已添加的显示"已添加"）
+        # 刷新打印机和共享面板的实际状态
         self._refresh_printer_panel_status()
+        self._refresh_share_panel_status()
 
     def _refresh_printer_panel_status(self) -> None:
         """后台检查每台打印机的实际添加状态，更新 PrinterPanel UI。"""
@@ -153,6 +157,18 @@ class MainApp(ctk.CTk):
                 printer_name=target.name, ok=True, already_exists=True,
                 message=f"{target.name} 已添加",
             ))
+
+    def _refresh_share_panel_status(self) -> None:
+        """后台检查共享文件夹的实际添加状态，更新 SharePanel UI。"""
+        import threading
+
+        def worker():
+            exists = self._backend.scan_share_exists()
+            # 用 after 回主线程更新 UI
+            self.after(0, lambda e=exists: self._share_panel.update_share_status(e))
+
+        threading.Thread(target=worker, daemon=True).start()
+
 
 
 def run_app() -> None:

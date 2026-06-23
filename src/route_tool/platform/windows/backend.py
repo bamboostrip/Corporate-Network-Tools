@@ -16,7 +16,11 @@ from route_tool.platform.windows.routes import (
     remove_route as _remove_route,
     route_exists as _route_exists,
 )
-from route_tool.platform.windows.shares import add_scan_share as _add_scan_share
+from route_tool.platform.windows.shares import (
+    add_scan_share as _add_scan_share,
+    scan_share_exists as _scan_share_exists,
+)
+
 
 
 class WindowsBackend:
@@ -64,3 +68,7 @@ class WindowsBackend:
             password=SCAN_SHARE_PASSWORD,
             display_name="SMY扫描",
         )
+
+    def scan_share_exists(self) -> bool:
+        return _scan_share_exists("SMY扫描")
+

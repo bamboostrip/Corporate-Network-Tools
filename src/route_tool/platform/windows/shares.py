@@ -128,3 +128,10 @@ def add_scan_share(
         share_name=display_name, ok=True,
         message=f"{display_name} 已添加到网络位置（{share_path}）",
     )
+
+
+def scan_share_exists(name: str = "SMY扫描") -> bool:
+    """检查 'SMY扫描' 网络位置快捷方式是否存在。"""
+    lnk = network_shortcuts_dir() / f"{name}.lnk"
+    return lnk.is_file()
+

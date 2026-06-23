@@ -68,3 +68,8 @@ class PlatformBackend(Protocol):
         Windows 用 cmdkey + Network Shortcuts，macOS 暂不支持。
         """
         ...
+
+    def scan_share_exists(self) -> bool:
+        """检查扫描文件共享网络位置是否已添加到系统。"""
+        ...
+
