@@ -7,7 +7,14 @@ from __future__ import annotations
 
 from typing import Protocol, runtime_checkable
 
-from route_tool.core.models import NetworkInfo, PingResult, Result, RouteInfo
+from route_tool.core.models import (
+    NetworkInfo,
+    PingResult,
+    PrinterInstallResult,
+    PrinterTarget,
+    Result,
+    RouteInfo,
+)
 
 
 @runtime_checkable
@@ -38,5 +45,17 @@ class PlatformBackend(Protocol):
         """查询当前网络环境（WiFi 名、本机 IP、网关 5.22 可达性）。
 
         UI 据此决定是否允许配置路由：5.22 不可达时禁用配置按钮。
+        """
+        ...
+
+    def printer_exists(self, target: PrinterTarget) -> bool:
+        """检查打印机是否已添加到系统。"""
+        ...
+
+    def add_printer(self, target: PrinterTarget) -> PrinterInstallResult:
+        """添加打印机到系统（静默安装驱动+端口+打印机）。
+
+        幂等：已存在时直接返回成功。
+        Windows 用 9100+驱动，macOS 用 IPP driverless 尝试。
         """
         ...
