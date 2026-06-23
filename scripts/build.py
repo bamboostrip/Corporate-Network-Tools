@@ -101,6 +101,8 @@ def main() -> int:
         "--name", APP_NAME,
         "--collect-all", "customtkinter",
         "--version-file", str(VERSION_FILE),
+        # 打印机驱动（Windows 用，目录结构见 src/route_tool/drivers/README.md）
+        "--add-data", "src/route_tool/drivers;route_tool/drivers",
     ]
     if ICON.exists():
         cmd.extend(["--icon", str(ICON)])
