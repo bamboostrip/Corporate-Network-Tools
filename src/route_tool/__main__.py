@@ -42,8 +42,8 @@ def _show_fatal_error(exc: BaseException) -> None:
         root = tk.Tk()
         root.withdraw()
         messagebox.showerror(
-            "公司网络配置工具 - 出现错误",
-            f"程序出现未预期错误，请截图此窗口发送给 IT。\n\n"
+            "芜湖高景网络配置工具 - 出现错误",
+            f"程序出现未预期错误，请联系 祁恒 处理。\n\n"
             f"错误: {exc}\n\n"
             f"诊断日志已保存到:\n{log_path}",
         )

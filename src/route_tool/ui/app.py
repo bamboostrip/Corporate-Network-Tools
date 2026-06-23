@@ -29,7 +29,9 @@ class MainApp(ctk.CTk):
         self._backend = backend
         self._orchestrator: DeployOrchestrator | None = None
 
-        self.title("公司网络配置工具")
+        self.title("芜湖高景网络配置工具")
+
+
         # 窗口尺寸：宽度收紧到 620（内容不宽），高度 720（150% 缩放下也能显示）
         # 内容超出时靠 CTkScrollableFrame 滚动，不再依赖大窗口高度
         self.geometry("620x760")

@@ -22,7 +22,8 @@ ENTRY = ROOT / "src" / "route_tool" / "__main__.py"
 ICON = ROOT / "assets" / "icon.ico"
 VERSION_FILE = ROOT / "version_info.txt"
 DRIVERS_DIR = ROOT / "src" / "route_tool" / "drivers"  # 打印机驱动目录（绝对路径）
-APP_NAME = "公司网络配置工具"
+APP_NAME = "芜湖高景网络配置工具"
+
 
 
 def read_version() -> str:
@@ -62,10 +63,12 @@ VSVersionInfo(
           '040904B0',
           [
             StringStruct('CompanyName', '公司 IT 部'),
-            StringStruct('FileDescription', '公司网络配置工具'),
+            StringStruct('FileDescription', '芜湖高景网络配置工具'),
             StringStruct('FileVersion', '{version}'),
-            StringStruct('ProductName', '公司网络配置工具'),
+            StringStruct('ProductName', '芜湖高景网络配置工具'),
             StringStruct('ProductVersion', '{version}'),
+
+
           ]
         )
       ]

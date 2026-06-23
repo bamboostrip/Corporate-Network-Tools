@@ -57,7 +57,16 @@ class DeployBar(ctk.CTkFrame):
             self, text="点击上方按钮，自动完成全部配置", anchor="center",
             font=ctk.CTkFont(size=12),
         )
-        self._status.grid(row=1, column=0, padx=15, pady=(0, 8), sticky="ew")
+        self._status.grid(row=1, column=0, padx=15, pady=(0, 4), sticky="ew")
+
+        # 联系人提示文字
+        self._contact_hint = ctk.CTkLabel(
+            self, text="💡 软件遇到什么问题联系-祁恒", anchor="center",
+            font=ctk.CTkFont(size=12),
+        )
+        self._contact_hint.grid(row=2, column=0, padx=15, pady=(0, 10), sticky="ew")
+
+
 
     def deploy_async(self) -> None:
         """后台执行一键部署。"""
