@@ -9,6 +9,7 @@ import inspect
 from route_tool.ui.widgets.route_panel import RoutePanel
 from route_tool.ui.widgets.test_panel import TestPanel, _DeviceRow
 from route_tool.ui.widgets.log_panel import LogPanel
+from route_tool.ui.widgets.printer_panel import PrinterPanel
 
 
 def test_route_panel_has_async_methods():
@@ -17,6 +18,12 @@ def test_route_panel_has_async_methods():
     assert hasattr(RoutePanel, "check_prerequisite_async")
     assert hasattr(RoutePanel, "_update_route_status")
     assert hasattr(RoutePanel, "_on_config_done")
+
+
+def test_printer_panel_has_async_methods():
+    """PrinterPanel 必须有后台添加入口和主线程回调。"""
+    assert hasattr(PrinterPanel, "add_printer_async")
+    assert hasattr(PrinterPanel, "_on_add_done")
 
 
 def test_test_panel_has_async_methods():
