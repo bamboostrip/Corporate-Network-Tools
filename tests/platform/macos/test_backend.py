@@ -127,8 +127,11 @@ def test_backend_add_printer_delegates():
     mock.assert_called_once_with(target)
 
 
-def test_backend_add_scan_share_unsupported_on_macos():
-    """macOS 暂不支持扫描共享网络位置，应返回失败提示。"""
-    result = MacBackend().add_scan_share()
-    assert result.ok is False
-    assert "macOS" in result.message or "不支持" in result.message
+def test_backend_add_scan_share_delegates():
+    """macOS 委托 add_scan_share 到 shares 模块（Finder 别名 + Keychain）。"""
+    from route_tool.core.models import ShareInstallResult
+    fake = ShareInstallResult(share_name="SMY扫描", ok=True, message="ok")
+    with patch("route_tool.platform.macos.backend._add_scan_share", return_value=fake) as mock:
+        result = MacBackend().add_scan_share()
+    assert result is fake
+    mock.assert_called_once()

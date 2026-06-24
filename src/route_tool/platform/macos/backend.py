@@ -8,8 +8,9 @@ from __future__ import annotations
 import os
 import re
 import subprocess
+from pathlib import Path
 
-from route_tool.core.config import GATEWAY, PING_COUNT, PING_TIMEOUT_SECONDS
+from route_tool.core.config import GATEWAY, PING_COUNT, PING_TIMEOUT_SECONDS, SCAN_SHARE_PASSWORD, SCAN_SHARE_PATH, SCAN_SHARE_USER
 from route_tool.core.models import NetworkInfo, PingResult, PrinterInstallResult, PrinterTarget, Result, ResultLevel, RouteInfo, ShareInstallResult
 from route_tool.core.network_util import get_local_ip as _get_local_ip
 from route_tool.platform.macos.network import get_wifi_ssid as _get_wifi_ssid
@@ -17,6 +18,7 @@ from route_tool.platform.macos.printers import (
     add_printer as _add_printer,
     printer_exists as _printer_exists,
 )
+from route_tool.platform.macos.shares import add_scan_share as _add_scan_share
 
 # 255.255.252.0 -> 22（前缀长度），用二进制 1 的个数
 _MASK_TO_PREFIX = {
@@ -146,13 +148,15 @@ class MacBackend:
         return _add_printer(target)
 
     def add_scan_share(self) -> ShareInstallResult:
-        """macOS 暂不支持扫描共享网络位置（Windows 专有功能）。"""
-        return ShareInstallResult(
-            share_name="SMY扫描", ok=False,
-            message="macOS 暂不支持扫描共享网络位置，请手动连接 SMB 共享",
-            error_code=-1,
+        """添加扫描共享：Keychain 凭据 + Finder 别名（.app 快捷方式）。"""
+        return _add_scan_share(
+            share_path=SCAN_SHARE_PATH,
+            user=SCAN_SHARE_USER,
+            password=SCAN_SHARE_PASSWORD,
+            display_name="SMY扫描",
         )
 
     def scan_share_exists(self) -> bool:
-        return False
+        """检查桌面是否有 SMY扫描.app。"""
+        return (Path.home() / "Desktop" / "SMY扫描.app").exists()
 
