@@ -1,0 +1,61 @@
+name: 打包 (Windows + macOS)
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装 uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: 同步依赖
+        run: uv sync
+
+      - name: 打包
+        run: python scripts/build.py
+
+      - name: 上传 exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: 芜湖高景网络配置工具-Windows
+          path: dist/芜湖高景网络配置工具.exe
+
+  macos-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装 uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: 同步依赖
+        run: uv sync
+
+      - name: 打包
+        run: python scripts/build.py
+
+      - name: 打包 .app 为 zip
+        run: |
+          cd dist
+          zip -r 芜湖高景网络配置工具-macOS.zip 芜湖高景网络配置工具.app
+
+      - name: 上传 zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: 芜湖高景网络配置工具-macOS
+          path: dist/芜湖高景网络配置工具-macOS.zip
