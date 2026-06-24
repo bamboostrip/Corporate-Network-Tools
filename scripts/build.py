@@ -115,9 +115,12 @@ def main() -> int:
         print(f"[build] 已删除旧 .spec 文件: {old_spec.name}")
 
     # 4. 构建 PyInstaller 命令（平台通用部分）
+    #    打包模式按平台区分：
+    #    - Windows: --onefile（单文件 .exe，分发方便）
+    #    - macOS:   --onedir（标准 .app 目录，双击即用，符合 Mac 习惯）
     cmd = [
         sys.executable, "-m", "PyInstaller",
-        "--onefile",
+        "--onedir" if IS_MACOS else "--onefile",
         "--windowed",
         "--clean",
         "--name", APP_NAME,
@@ -174,11 +177,19 @@ def main() -> int:
             size_mb = exe.stat().st_size / 1024 / 1024
             print(f"[build] 大小: {size_mb:.1f} MB")
     else:
+        # macOS: --onedir 产出 .app 目录
         app = ROOT / "dist" / f"{APP_NAME}.app"
         print(f"\n[build] [OK] 打包完成!")
         print(f"[build] 应用程序: {app}")
         if app.exists():
-            print(f"[build] [OK] .app 已生成")
+            # .app 内部结构验证（Contents/MacOS/<APP_NAME> 是可执行入口）
+            macos_bin = app / "Contents" / "MacOS" / APP_NAME
+            if macos_bin.exists():
+                print(f"[build] [OK] .app 已生成，入口: {macos_bin}")
+            else:
+                print(f"[build] [WARNING] .app 已生成但入口文件缺失: {macos_bin}")
+        else:
+            print(f"[build] [WARNING] .app 未生成，请检查打包日志")
 
     return 0
 
