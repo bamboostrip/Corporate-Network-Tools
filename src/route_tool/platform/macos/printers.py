@@ -8,6 +8,7 @@ from __future__ import annotations
 import subprocess
 
 from route_tool.core.models import PrinterInstallResult, PrinterTarget
+from route_tool.platform.macos.admin import run_with_admin
 
 
 def printer_exists(target: PrinterTarget) -> bool:
@@ -42,7 +43,10 @@ def build_lpadmin_command(target: PrinterTarget) -> list[str]:
 
 
 def add_printer(target: PrinterTarget) -> PrinterInstallResult:
-    """添加打印机（IPP driverless 尝试）。幂等。"""
+    """添加打印机（IPP driverless 尝试）。幂等。
+
+    用 osascript 提权执行 lpadmin（避免 sudo 在 GUI 卡死）。
+    """
     if printer_exists(target):
         return PrinterInstallResult(
             printer_name=target.name, ok=True, already_exists=True,
@@ -50,8 +54,10 @@ def add_printer(target: PrinterTarget) -> PrinterInstallResult:
         )
 
     cmd = build_lpadmin_command(target)
+    # 用 run_with_admin 执行（osascript 弹授权框，用户输密码后以 root 运行 lpadmin）
+    shell_cmd = " ".join(cmd)
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+        proc = run_with_admin(shell_cmd)
     except (subprocess.SubprocessError, OSError) as e:
         return PrinterInstallResult(
             printer_name=target.name, ok=False,
@@ -66,7 +72,7 @@ def add_printer(target: PrinterTarget) -> PrinterInstallResult:
         )
     return PrinterInstallResult(
         printer_name=target.name, ok=False,
-        message="添加失败，请尝试从夏普官网下载 macOS 驱动手动添加",
+        message="添加失败（用户取消授权或 IPP 不支持），请尝试从夏普官网下载 macOS 驱动手动添加",
         raw_output=proc.stderr,
         error_code=proc.returncode,
     )

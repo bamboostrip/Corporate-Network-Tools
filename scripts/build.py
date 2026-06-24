@@ -1,16 +1,24 @@
-"""一键打包脚本。
+"""一键打包脚本（跨平台：Windows 产出 .exe，macOS 产出 .app）。
 
-产出：dist/公司网络配置工具.exe
+通用参数：
 - --onefile: 单文件
 - --windowed: 无控制台（GUI 程序）
-- --uac-admin: 内嵌管理员 manifest，双击即弹 UAC
 - --collect-all customtkinter: CTk 主题资源必须手动收集
-- --version-file: 从 pyproject.toml 读版本号生成
+- --add-data: 打印机驱动目录
+
+平台差异：
+- Windows: --uac-admin（UAC manifest）+ --version-file + .ico 图标 + --add-data 用 ; 分隔
+- macOS: 无提权参数（用 osascript 运行时弹授权框）+ .icns 图标(可选) + --add-data 用 : 分隔
+
+注意：PyInstaller 不支持交叉编译，必须在目标平台上运行本脚本。
+  - 打 Windows 版：在 Windows 上运行
+  - 打 macOS 版：在 Mac 上运行
 
 用法: uv run python scripts/build.py
 """
 from __future__ import annotations
 
+import platform
 import re
 import subprocess
 import sys
@@ -19,11 +27,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PYPROJECT = ROOT / "pyproject.toml"
 ENTRY = ROOT / "src" / "route_tool" / "__main__.py"
-ICON = ROOT / "assets" / "icon.ico"
+ICON_WIN = ROOT / "assets" / "icon.ico"      # Windows 图标
+ICON_MAC = ROOT / "assets" / "icon.icns"      # macOS 图标（可选）
 VERSION_FILE = ROOT / "version_info.txt"
 DRIVERS_DIR = ROOT / "src" / "route_tool" / "drivers"  # 打印机驱动目录（绝对路径）
 APP_NAME = "芜湖高景网络配置工具"
 
+IS_WINDOWS = platform.system() == "Windows"
+IS_MACOS = platform.system() == "Darwin"
+# --add-data 分隔符：Windows 用 ;，macOS/Linux 用 :
+DATA_SEP = ";" if IS_WINDOWS else ":"
 
 
 def read_version() -> str:
@@ -36,7 +49,7 @@ def read_version() -> str:
 
 
 def write_version_file(version: str) -> None:
-    """生成 PyInstaller 的 version_info.txt。
+    """生成 PyInstaller 的 version_info.txt（仅 Windows 用）。
 
     Windows 版本号必须是 4 段数字（x.y.z.w），不足补 0。
     """
@@ -82,48 +95,62 @@ VSVersionInfo(
 
 def main() -> int:
     version = read_version()
+    current_os = platform.system()
     print(f"[build] 版本号: {version}")
+    print(f"[build] 当前平台: {current_os} ({'Windows .exe' if IS_WINDOWS else 'macOS .app' if IS_MACOS else '未知'})")
 
     # 1. 同步依赖
     print("[build] 同步依赖...")
     subprocess.run(["uv", "sync"], check=True, cwd=ROOT)
 
-    # 2. 生成 version_info.txt
-    print("[build] 生成 version_info.txt...")
-    write_version_file(version)
+    # 2. 生成 version_info.txt（仅 Windows）
+    if IS_WINDOWS:
+        print("[build] 生成 version_info.txt...")
+        write_version_file(version)
 
     # 3. 删除旧 .spec 文件，避免 PyInstaller 读取旧配置里的 datas 覆盖 --add-data 参数
-    #    PyInstaller 检测到已有 .spec 时会优先用 .spec 里的 datas，导致驱动漏打
     old_spec = ROOT / f"{APP_NAME}.spec"
     if old_spec.exists():
         old_spec.unlink()
         print(f"[build] 已删除旧 .spec 文件: {old_spec.name}")
 
-    # 4. 构建 PyInstaller 命令
-    # 注意：不能用 "uv run pyinstaller"，uv 在 Windows 下传脚本路径会触发
-    # PyInstaller 的 "Failed to canonicalize script path" 报错。
-    # 改用当前 venv 的 python 直接调用 -m PyInstaller（sys.executable 即 venv python，
-    # 因为本脚本由 uv run python 启动）。
+    # 4. 构建 PyInstaller 命令（平台通用部分）
     cmd = [
         sys.executable, "-m", "PyInstaller",
         "--onefile",
         "--windowed",
-        "--uac-admin",
-        "--clean",          # 强制清除旧缓存，确保驱动文件每次都重新打包进去
+        "--clean",
         "--name", APP_NAME,
         "--collect-all", "customtkinter",
-        "--version-file", str(VERSION_FILE),
-        # 打印机驱动（使用绝对路径避免 PyInstaller 相对路径解析歧义）
-        "--add-data", f"{DRIVERS_DIR}:route_tool/drivers",
+        # 打印机驱动（分隔符按平台区分）
+        "--add-data", f"{DRIVERS_DIR}{DATA_SEP}route_tool/drivers",
     ]
-    if ICON.exists():
-        cmd.extend(["--icon", str(ICON)])
-        print(f"[build] 使用图标: {ICON}")
-    else:
-        print("[build] 未找到 assets/icon.ico，使用默认图标")
+
+    # 5. 平台专有参数
+    if IS_WINDOWS:
+        # Windows: UAC 提权 + 版本信息 + 图标
+        cmd.extend([
+            "--uac-admin",
+            "--version-file", str(VERSION_FILE),
+        ])
+        if ICON_WIN.exists():
+            cmd.extend(["--icon", str(ICON_WIN)])
+            print(f"[build] 使用图标: {ICON_WIN}")
+        else:
+            print("[build] 未找到 assets/icon.ico，使用默认图标")
+    elif IS_MACOS:
+        # macOS: 无 UAC（运行时用 osascript 弹授权框），可选 .icns 图标
+        if ICON_MAC.exists():
+            cmd.extend(["--icon", str(ICON_MAC)])
+            print(f"[build] 使用图标: {ICON_MAC}")
+        else:
+            print("[build] 未找到 assets/icon.icns，使用默认图标")
+        # macOS 打包成 .app 需要额外参数（osx-bundle-identifier）
+        cmd.extend(["--osx-bundle-identifier", "com.company.network-config-tool"])
+
     cmd.append(str(ENTRY))
 
-    # 5. 执行打包前验证驱动目录
+    # 6. 执行打包前验证驱动目录
     if not DRIVERS_DIR.is_dir():
         print(f"[build] [FAIL] 驱动目录不存在: {DRIVERS_DIR}", file=sys.stderr)
         return 1
@@ -131,23 +158,28 @@ def main() -> int:
     driver_mb = sum(f.stat().st_size for f in driver_files if f.is_file()) / 1024 / 1024
     print(f"[build] 驱动目录已确认: {DRIVERS_DIR} ({driver_mb:.1f} MB, {len(driver_files)} 个文件)")
 
-    # 6. 执行打包
+    # 7. 执行打包
     print(f"[build] 执行: {' '.join(cmd)}")
     result = subprocess.run(cmd, cwd=ROOT)
     if result.returncode != 0:
         print(f"[build] [FAIL] 打包失败 (exit {result.returncode})", file=sys.stderr)
         return result.returncode
 
-    exe = ROOT / "dist" / f"{APP_NAME}.exe"
-    print(f"\n[build] [OK] 打包完成!")
-    print(f"[build] 可执行文件: {exe}")
-    if exe.exists():
-        size_mb = exe.stat().st_size / 1024 / 1024
-        print(f"[build] 大小: {size_mb:.1f} MB")
-        if size_mb < 20:
-            print("[build] [WARNING] EXE 小于 20MB，驱动可能未打包进去！请检查 --add-data 参数。")
-        else:
-            print(f"[build] [OK] 大小正常（含驱动压缩后约22MB）。")
+    # 8. 验证产出
+    if IS_WINDOWS:
+        exe = ROOT / "dist" / f"{APP_NAME}.exe"
+        print(f"\n[build] [OK] 打包完成!")
+        print(f"[build] 可执行文件: {exe}")
+        if exe.exists():
+            size_mb = exe.stat().st_size / 1024 / 1024
+            print(f"[build] 大小: {size_mb:.1f} MB")
+    else:
+        app = ROOT / "dist" / f"{APP_NAME}.app"
+        print(f"\n[build] [OK] 打包完成!")
+        print(f"[build] 应用程序: {app}")
+        if app.exists():
+            print(f"[build] [OK] .app 已生成")
+
     return 0
 
 

@@ -37,17 +37,31 @@ def test_is_admin_returns_false_when_no_geteuid():
 
 
 def test_add_route_success():
+    """路由添加用 osascript 提权（避免 sudo 在 GUI 卡死）。
+
+    命令变成 osascript -e 'do shell script "route ..." with administrator privileges'。
+    """
     mock_proc = MagicMock(returncode=0, stdout="add net", stderr="")
-    with patch("route_tool.platform.macos.backend.subprocess.run", return_value=mock_proc) as mock_run:
+    with patch("route_tool.platform.macos.admin.subprocess.run", return_value=mock_proc) as mock_run:
         result = MacBackend().add_route(ROUTE)
     assert result.level == ResultLevel.SUCCESS
     args = mock_run.call_args[0][0]
-    # macOS: sudo route -n add -net 192.168.0.0/22 192.168.5.22
-    assert "route" in args
-    assert "add" in args
-    assert "-net" in args
-    assert "192.168.0.0/22" in args  # macOS 用 CIDR
-    assert "192.168.5.22" in args
+    # 用 osascript 提权执行 route 命令
+    assert "osascript" in args
+    apple_script = args[2]  # -e 后的脚本字符串
+    assert "route" in apple_script
+    assert "add" in apple_script
+    assert "192.168.0.0/22" in apple_script  # macOS 用 CIDR
+    assert "192.168.5.22" in apple_script
+    assert "administrator privileges" in apple_script  # 确实请求了提权
+
+
+def test_add_route_failure_user_denied():
+    """用户取消授权时返回失败（不卡死）。"""
+    mock_proc = MagicMock(returncode=1, stdout="", stderr="User canceled")
+    with patch("route_tool.platform.macos.admin.subprocess.run", return_value=mock_proc):
+        result = MacBackend().add_route(ROUTE)
+    assert result.level == ResultLevel.FAILURE
 
 
 def test_route_exists_uses_netstat():

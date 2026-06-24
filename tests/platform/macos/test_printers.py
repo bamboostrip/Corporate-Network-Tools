@@ -45,17 +45,22 @@ def test_add_printer_idempotent():
 
 
 def test_add_printer_success():
+    """添加用 osascript 提权执行 lpadmin（避免 sudo 卡死）。"""
     mock = MagicMock(returncode=0, stdout="", stderr="")
     with patch("route_tool.platform.macos.printers.printer_exists", return_value=False), \
-         patch("route_tool.platform.macos.printers.subprocess.run", return_value=mock) as mock_run:
+         patch("route_tool.platform.macos.admin.subprocess.run", return_value=mock) as mock_run:
         result = add_printer(BIG)
     assert result.ok is True
     mock_run.assert_called_once()
+    # 验证用 osascript 提权
+    args = mock_run.call_args[0][0]
+    assert "osascript" in args
 
 
 def test_add_printer_failure():
-    mock = MagicMock(returncode=1, stdout="", stderr="lpadmin: Permission denied")
+    """用户取消授权或 lpadmin 失败时返回失败。"""
+    mock = MagicMock(returncode=1, stdout="", stderr="User canceled")
     with patch("route_tool.platform.macos.printers.printer_exists", return_value=False), \
-         patch("route_tool.platform.macos.printers.subprocess.run", return_value=mock):
+         patch("route_tool.platform.macos.admin.subprocess.run", return_value=mock):
         result = add_printer(BIG)
     assert result.ok is False

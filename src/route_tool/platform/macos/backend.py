@@ -19,6 +19,7 @@ from route_tool.platform.macos.printers import (
     printer_exists as _printer_exists,
 )
 from route_tool.platform.macos.shares import add_scan_share as _add_scan_share
+from route_tool.platform.macos.admin import run_with_admin
 
 # 255.255.252.0 -> 22（前缀长度），用二进制 1 的个数
 _MASK_TO_PREFIX = {
@@ -69,9 +70,10 @@ class MacBackend:
     def add_route(self, route: RouteInfo) -> Result:
         prefix = _mask_to_prefix(route.mask)
         cidr = f"{route.network}/{prefix}"
-        cmd = ["sudo", "route", "-n", "add", "-net", cidr, route.gateway]
+        # 用 osascript 提权（弹出系统授权框），避免 sudo 在 GUI 卡死
+        shell_cmd = f"route -n add -net {cidr} {route.gateway}"
         try:
-            proc = _run(cmd)
+            proc = run_with_admin(shell_cmd)
         except (subprocess.SubprocessError, OSError) as e:
             return Result(
                 level=ResultLevel.FAILURE,
@@ -86,7 +88,7 @@ class MacBackend:
             )
         return Result(
             level=ResultLevel.FAILURE,
-            message="路由添加失败（可能需要 sudo 权限）",
+            message="路由添加失败（用户取消授权或命令错误）",
             raw_output=proc.stderr or proc.stdout,
             error_code=proc.returncode,
         )
@@ -94,9 +96,9 @@ class MacBackend:
     def remove_route(self, route: RouteInfo) -> Result:
         prefix = _mask_to_prefix(route.mask)
         cidr = f"{route.network}/{prefix}"
-        cmd = ["sudo", "route", "-n", "delete", "-net", cidr]
+        shell_cmd = f"route -n delete -net {cidr}"
         try:
-            proc = _run(cmd)
+            proc = run_with_admin(shell_cmd)
         except (subprocess.SubprocessError, OSError) as e:
             return Result(
                 level=ResultLevel.FAILURE,
@@ -107,7 +109,7 @@ class MacBackend:
             return Result(level=ResultLevel.SUCCESS, message="路由删除成功")
         return Result(
             level=ResultLevel.FAILURE,
-            message="路由删除失败",
+            message="路由删除失败（用户取消授权或命令错误）",
             raw_output=proc.stderr or proc.stdout,
             error_code=proc.returncode,
         )
