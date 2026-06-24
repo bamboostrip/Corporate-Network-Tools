@@ -94,6 +94,11 @@ VSVersionInfo(
 
 
 def main() -> int:
+    # 确保 Windows CI 环境下中文输出不乱码（GitHub Actions 默认 cp1252）
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure") and stream.encoding != "utf-8":
+            stream.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
+
     version = read_version()
     current_os = platform.system()
     print(f"[build] 版本号: {version}")
